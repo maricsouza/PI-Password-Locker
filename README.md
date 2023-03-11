@@ -14,3 +14,28 @@
 - Raian Medeiros Nolaço<a href="https://www.linkedin.com/in/raiannolaço/">💼Linkedin</a> <a href ="https://github.com/RaianNolaco?tab=repositories">👨‍💻Github</a>
 
 - Vyviane Sousa Santos<a href="https://www.linkedin.com/in/vyvianesouza/">💼Linkedin</a> <a href ="https://github.com/Vyviane">👨‍💻Github</a>
+
+
+## Links do projeto
+
+- <a href="https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv">Caso de uso</a>
+- <a href="https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/Wolf-Broker?node-id=0%3A1&t=7v6ESxeYw1GwWZaB-1">Telas</a>
+- <a href="https://app.dbdesigner.net/designer/schema/0-pi_mer_v1">MER</a>
+
+## Funcionalidades
+
+### Login
+> Efetuar login em conta já existente
+### Cadastro
+> Criar uma conta em nossa corretora
+### Deposito
+> Como não iremos trabalhar com dinheiro de verdade, será possivel colocar dinheiro em sua conta apenas por um input
+### Saque
+> Retirar dinheiro ficticio de sua conta
+### Comprar ações
+> Com o dinheiro ficticio será possivel "comprar" as ações presentes na NASDAQ (bolsa americana)
+### Vender ações
+> Vender ações e creditar valor no saldo da sua conta
+### Visualizar ações
+> Antes de comprar ações será possivel visualizar: <br/> - propriedades das empresas em que as ações pertencem <br/> - preços antigos <br/> - preço atual
+
