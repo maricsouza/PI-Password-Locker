@@ -19,7 +19,7 @@
 ## Links do projeto
 
 - <a href="https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv">Caso de uso</a>
-- <a href="https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/Wolf-Broker?node-id=0%3A1&t=7v6ESxeYw1GwWZaB-1">Telas</a>
+- <a href="[https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/Wolf-Broker?node-id=0%3A1&t=7v6ESxeYw1GwWZaB-1](https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1)">Telas</a>
 - <a href="https://app.dbdesigner.net/designer/schema/0-pi_mer_v1">MER</a>
 
 ## Funcionalidades
