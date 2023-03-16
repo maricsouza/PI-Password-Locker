@@ -9,7 +9,7 @@
 
 - Mariana Souza do Carmo <a href="https://www.linkedin.com/in/mariana-souza-240368224/">💼Linkedin</a> <a href ="https://github.com/maricsouza">👩‍💻Github</a>
 
-- Natalia da Rocha Santos<a href="">💼Linkedin</a> <a href ="https://github.com/NathaliadaRocha07">👩‍💻Github</a>
+- Nathalia da Rocha Santos<a href="">💼Linkedin</a> <a href ="https://github.com/NathaliadaRocha07">👩‍💻Github</a>
 
 - Raian Medeiros Nolaço<a href="https://www.linkedin.com/in/raiannolaço/">💼Linkedin</a> <a href ="https://github.com/RaianNolaco?tab=repositories">👨‍💻Github</a>
 
