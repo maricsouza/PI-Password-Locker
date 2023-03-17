@@ -48,7 +48,7 @@
 ## Layout High-Fidelity
 
 ### Tela de cadastro
-![image](prototipacao/layout-high-fidelity/cadastro%20page.png)
+![image](https://user-images.githubusercontent.com/81928036/226070073-41cc1df1-2d22-4654-b7b9-babf1393a538.png)
 
 <!--- This is an HTML comment in Markdown 
   # (### Dashboard)
@@ -58,9 +58,19 @@
   # (![image](prototipacao/layout-mer/mer.png))
 --> 
 
-![image](https://user-images.githubusercontent.com/81928036/226070073-41cc1df1-2d22-4654-b7b9-babf1393a538.png)
+### Tela de Login
+![image](https://user-images.githubusercontent.com/81928036/226070826-751dfb19-cf12-4dbb-8f22-6be3dbf5c089.png)
+
+### Tela da Home
 ![image](https://user-images.githubusercontent.com/81928036/226070080-338a71ed-cd7a-427f-a445-455fbba8ce21.png)
+
+### Tela de criação e geração de uma nova senha 
+![image](https://user-images.githubusercontent.com/81928036/226071095-7d81117c-dfb5-481d-9e85-8361b409f3b5.png)
+
+### Tela de alteração de senha
 ![image](https://user-images.githubusercontent.com/81928036/226070087-e9b1907e-d249-48cd-a924-a89e9272b48b.png)
+
+### Tela de Perfil
 ![image](https://user-images.githubusercontent.com/81928036/226070689-f9b82eda-0ff0-447c-844c-a7db7666b56f.png)
 
 
