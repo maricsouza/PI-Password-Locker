@@ -21,7 +21,7 @@
 - <a href="https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv">Caso de uso (senac123)</a>
 - <a href="https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1">Prototipo Low Fidelity</a>
 - <a href="">Prototipo High Fidelity</a> 
-- <a href="https://app.dbdesigner.net/designer/schema/0-pi_mer_v1">MER</a>
+- <a href="https://dbdesigner.page.link/MGXjLeVJCLgFKWcG9">MER</a>
 
 ## Funcionalidades
 
