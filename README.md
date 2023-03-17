@@ -18,13 +18,13 @@
 
 ## Links do projeto
 
-- <a href="https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv">Caso de uso (senac123)</a>
-- <a href="https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1">Prototipo Low Fidelity</a>
-- <a href="">Prototipo High Fidelity</a> 
-- <a href="https://dbdesigner.page.link/MGXjLeVJCLgFKWcG9">MER</a>
+- [Caso de uso (senac123)](https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv).
+- [Protótipo Low/High Fidelity](https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1).
+- [MER](https://dbdesigner.page.link/MGXjLeVJCLgFKWcG9).
+
 
 ## Funcionalidades
-
+---
 ### Login
 > Efetuar login em conta já existente
 ### Cadastro
@@ -37,3 +37,23 @@
 > Gerar senhas fortes para o usuario
 ### Excluir contas
 > Exclui a conta do cliente
+---
+
+## Casos de Uso
+![image](/prototipacao/casos-de-uso/casos%20de%20uso%20pi.png)
+
+## MER
+![image](prototipacao/layout-mer/mer.png)
+
+## Layout High-Fidelity
+
+### Tela de cadastro
+![image](prototipacao/layout-high-fidelity/cadastro%20page.png)
+
+<!--- This is an HTML comment in Markdown 
+  # (### Dashboard)
+  # (![image](prototipacao/layout-mer/mer.png))
+
+  # (### Adicionar senha)
+  # (![image](prototipacao/layout-mer/mer.png))
+-->
