@@ -1,6 +1,6 @@
-# PI-Wolf-Broker
+# PI-Password-Locker
 
-## Envolvidos na Wolf-Broker
+## Envolvidos na Password-Locker
 #### Turma D - TADS 3° Semestre 
 
 - Tiago Fernandes<a href="https://www.linkedin.com/in/tiago-fernandes-ribeiro-03074815a/">💼Linkedin</a> <a href ="https://github.com/TiagoFernandes11">👩‍💻Github</a> 
@@ -18,8 +18,9 @@
 
 ## Links do projeto
 
-- <a href="https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv">Caso de uso</a>
-- <a href="[https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/Wolf-Broker?node-id=0%3A1&t=7v6ESxeYw1GwWZaB-1](https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1)">Telas</a>
+- <a href="https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv">Caso de uso (senac123)</a>
+- <a href="https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1">Prototipo Low Fidelity</a>
+- <a href="">Prototipo High Fidelity</a> 
 - <a href="https://app.dbdesigner.net/designer/schema/0-pi_mer_v1">MER</a>
 
 ## Funcionalidades
@@ -28,14 +29,11 @@
 > Efetuar login em conta já existente
 ### Cadastro
 > Criar uma conta em nossa corretora
-### Deposito
-> Como não iremos trabalhar com dinheiro de verdade, será possivel colocar dinheiro em sua conta apenas por um input
-### Saque
-> Retirar dinheiro ficticio de sua conta
-### Comprar ações
-> Com o dinheiro ficticio será possivel "comprar" as ações presentes na NASDAQ (bolsa americana)
-### Vender ações
-> Vender ações e creditar valor no saldo da sua conta
-### Visualizar ações
-> Antes de comprar ações será possivel visualizar: <br/> - propriedades das empresas em que as ações pertencem <br/> - preços antigos <br/> - preço atual
-
+### Cadastrar senhas
+> Cadastrar senhas para poder consultar mais tarde
+### Consultar senhas
+> Consultar senhas já existentes
+### Sugerir senhas fortes
+> Gerar senhas fortes para o usuario
+### Excluir contas
+> Exclui a conta do cliente
