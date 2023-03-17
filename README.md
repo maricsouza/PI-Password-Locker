@@ -56,4 +56,13 @@
 
   # (### Adicionar senha)
   # (![image](prototipacao/layout-mer/mer.png))
--->
+--> 
+
+![image](https://user-images.githubusercontent.com/81928036/226070073-41cc1df1-2d22-4654-b7b9-babf1393a538.png)
+![image](https://user-images.githubusercontent.com/81928036/226070080-338a71ed-cd7a-427f-a445-455fbba8ce21.png)
+![image](https://user-images.githubusercontent.com/81928036/226070087-e9b1907e-d249-48cd-a924-a89e9272b48b.png)
+![image](https://user-images.githubusercontent.com/81928036/226070689-f9b82eda-0ff0-447c-844c-a7db7666b56f.png)
+
+
+
+
