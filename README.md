@@ -73,6 +73,19 @@
 ### Tela de Perfil
 ![image](https://user-images.githubusercontent.com/81928036/226070689-f9b82eda-0ff0-447c-844c-a7db7666b56f.png)
 
+### Tela de Altera
+![image](https://user-images.githubusercontent.com/102376831/226072943-c3ea8c79-9de4-42ce-8c66-f12b698200e4.png)
+
+### Tela de Normal Facebook
+![image](https://user-images.githubusercontent.com/102376831/226073004-d5dcdaa5-b18e-4bbb-a840-99b2eb24ee42.png)
+
+### Tela de Hover Senac
+![image](https://user-images.githubusercontent.com/102376831/226073582-c9ddaa60-9d84-4883-a8f6-0a6c2a1eb039.png)
+
+
+
+
+
 
 
 
