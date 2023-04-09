@@ -5,11 +5,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/passwordLocker/pom.xml" />
+        <option value="$PROJECT_DIR$/PassWordLocker/pom.xml" />
+        <option value="$PROJECT_DIR$/PasswordLockerPI/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/PIpasswordLocker/pom.xml" />
+        <option value="$PROJECT_DIR$/PassWordLocker/pom.xml" />
       </set>
     </option>
   </component>
