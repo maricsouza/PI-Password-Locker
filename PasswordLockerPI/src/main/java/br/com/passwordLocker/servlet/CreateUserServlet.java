@@ -20,9 +20,10 @@ public class CreateUserServlet extends HttpServlet {
         String userPassword = request.getParameter("user-password");
         String userPhone = request.getParameter("user-phone");
         String userCpf = request.getParameter("user-cpf");
+
         UserModel user = new UserModel(userName, userCpf, userEmail, userPassword, userPhone);
         (new UserDao()).createUser(user);
-        System.out.println(userName + "\n" + userCpf);
+
         request.getRequestDispatcher("index.html").forward(request, response);
     }
 }
