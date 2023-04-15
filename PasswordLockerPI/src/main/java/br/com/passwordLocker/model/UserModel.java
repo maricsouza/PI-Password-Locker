@@ -12,6 +12,10 @@ public class UserModel {
     private String senha;
     private String telefone;
 
+    public UserModel(){
+
+    }
+
     public UserModel(String nome, String cpf, String email, String senha, String telefone) {
         this.nome = nome;
         this.cpf = cpf;

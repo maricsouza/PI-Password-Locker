@@ -24,6 +24,6 @@ public class CreateUserServlet extends HttpServlet {
         UserModel user = new UserModel(userName, userCpf, userEmail, userPassword, userPhone);
         (new UserDao()).createUser(user);
 
-        request.getRequestDispatcher("index.html").forward(request, response);
+        response.sendRedirect("/find-all-users");
     }
 }
