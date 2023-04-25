@@ -10,6 +10,7 @@
     <h1>Usuarios</h1>
     <table>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>CPF</th>
             <th>Email</th>
@@ -19,6 +20,7 @@
         <c:forEach var="user" items="${users}">
         <tr>
             <td></td>
+            <td>${user.id}</td>
             <td>${user.nome}</td>
             <td>${user.cpf}</td>
             <td>${user.email}</td>

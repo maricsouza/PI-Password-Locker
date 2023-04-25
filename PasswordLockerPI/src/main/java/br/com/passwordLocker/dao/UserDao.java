@@ -48,13 +48,14 @@ public class UserDao {
             while (resultSet.next()) {
                 System.out.println("Has next()");
 
+                String userID = resultSet.getString("ID_USER");
                 String userName = resultSet.getString("NOME");
                 String userEmail = resultSet.getString("EMAIL");
                 String userPassword = resultSet.getString("SENHA");
                 String userPhone = resultSet.getString("TELEFONE");
                 String userCpf = resultSet.getString("CPF");
 
-                UserModel user = new UserModel(userName, userCpf, userEmail, userPassword, userPhone);
+                UserModel user = new UserModel(userID,userName, userCpf, userEmail, userPassword, userPhone);
 
                 System.out.println(user.getNome());
                 users.add(user);
@@ -73,6 +74,32 @@ public class UserDao {
             return Collections.emptyList();
 
         }
+    }
+    public void deleteCarById(String userID) {
+
+        String SQL = "DELETE CAR WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, userID);
+            preparedStatement.execute();
+
+            System.out.println("success on delete car with id: " + userID);
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection");
+
+        }
 
     }
+
+
 }
