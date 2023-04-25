@@ -16,6 +16,7 @@
             <th>Email</th>
             <th>Senha</th>
             <th>Telefone</th>
+            <th>Actions</th>
         </tr>
         <c:forEach var="user" items="${users}">
         <tr>
@@ -26,6 +27,12 @@
             <td>${user.email}</td>
             <td>${user.senha}</td>
             <td>${user.telefone}</td>
+            <td>
+                <form action="/delete-user" method="post">
+                    <input type="hidden" id="ID_USER" name="ID_USER" value="${user.id}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
         </c:forEach>
     </table>
