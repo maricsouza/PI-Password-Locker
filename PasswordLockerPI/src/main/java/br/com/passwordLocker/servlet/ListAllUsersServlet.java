@@ -24,8 +24,6 @@ public class ListAllUsersServlet extends HttpServlet {
 
             req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
 
-            System.out.println("Passou do requestDispatcher");
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

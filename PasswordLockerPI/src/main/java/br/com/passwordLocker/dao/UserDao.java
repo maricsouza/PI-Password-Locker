@@ -46,7 +46,6 @@ public class UserDao {
             List<UserModel> users = new ArrayList<>();
 
             while (resultSet.next()) {
-                System.out.println("Has next()");
 
                 String userID = resultSet.getString("ID_USER");
                 String userName = resultSet.getString("NOME");
@@ -57,12 +56,9 @@ public class UserDao {
 
                 UserModel user = new UserModel(userID,userName, userCpf, userEmail, userPassword, userPhone);
 
-                System.out.println(user.getNome());
                 users.add(user);
 
             }
-            System.out.println("success in select * tb_user");
-
             connection.close();
 
             return users;
@@ -77,25 +73,30 @@ public class UserDao {
     }
     public void deleteCarById(String userID) {
 
-        String SQL = "DELETE CAR WHERE ID = ?";
+        String SQL = "DELETE TB_USER WHERE ID_USER = ?";
 
         try {
 
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
 
-            System.out.println("success in database connection");
-
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            System.out.println("1 - preparedStatement passou");
             preparedStatement.setString(1, userID);
+
+            System.out.println("2 - setString passou");
+
             preparedStatement.execute();
 
-            System.out.println("success on delete car with id: " + userID);
+            System.out.println("2 - execute passou");
+
+            System.out.println("success on delete user with id: " + userID);
 
             connection.close();
 
         } catch (Exception e) {
 
-            System.out.println("fail in database connection");
+            System.out.println("fail in database connection:\n" +e.getMessage());
 
         }
 
