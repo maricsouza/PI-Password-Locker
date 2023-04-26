@@ -21,8 +21,17 @@ public class CreateUserServlet extends HttpServlet {
         String userPhone = request.getParameter("user-phone");
         String userCpf = request.getParameter("user-cpf");
 
+        UserDao userDao = new UserDao();
         UserModel user = new UserModel(userName, userCpf, userEmail, userPassword, userPhone);
-        (new UserDao()).createUser(user);
+
+        if (user.getId() == null) {
+
+            userDao.createUser(user);
+
+        } else {
+
+            userDao.updateUser(user);
+        }
 
         response.sendRedirect("/find-all-users");
     }

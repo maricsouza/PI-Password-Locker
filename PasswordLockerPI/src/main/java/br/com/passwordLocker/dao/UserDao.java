@@ -80,15 +80,8 @@ public class UserDao {
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
-            System.out.println("1 - preparedStatement passou");
             preparedStatement.setString(1, userID);
-
-            System.out.println("2 - setString passou");
-
             preparedStatement.execute();
-
-            System.out.println("2 - execute passou");
 
             System.out.println("success on delete user with id: " + userID);
 
@@ -97,6 +90,35 @@ public class UserDao {
         } catch (Exception e) {
 
             System.out.println("fail in database connection:\n" +e.getMessage());
+
+        }
+
+    }
+    public void updateUser(UserModel user) {
+
+        String SQL = "UPDATE TB_USER SET NAME = ? WHERE ID_USER = ?";
+
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, user.getNome());
+            preparedStatement.setString(2, user.getId());
+            preparedStatement.execute();
+
+            System.out.println("success in update user");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection");
+            System.out.println("Error: " + e.getMessage());
 
         }
 
