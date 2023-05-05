@@ -24,8 +24,8 @@ public class UserDao {
             ps.setString(5, user.getTelefone());
             ps.execute();
             connection.close();
-        } catch (Exception var5) {
-            System.err.println("Algo deu errado: " + var5.getMessage());
+        } catch (Exception e) {
+            System.err.println("Algo deu errado: " + e.getMessage());
         }
 
     }
@@ -96,5 +96,27 @@ public class UserDao {
 
             System.out.println("fail in database connection: " + e.getMessage());
         }
+    }
+
+    public void updateUser( UserModel user){
+        String SQL = "UPDATE TB_USER SET NOME = ?, EMAIL = ?, SENHA = ?, TELEFONE = ? WHERE ID_USER = ?";
+
+        try{
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            PreparedStatement ps = connection.prepareStatement(SQL);
+
+            ps.setString(1, user.getNome());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getSenha());
+            ps.setString(4, user.getTelefone());
+            ps.setInt(5, user.getId());
+            ps.execute();
+
+            connection.close();
+
+        }catch(Exception e){
+            System.err.println("Algo deu errado: " + e.getMessage());
+        }
+
     }
 }
