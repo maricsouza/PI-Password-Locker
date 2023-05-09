@@ -21,6 +21,7 @@
 - [Caso de uso (senac123)](https://whimsical.com/wolf-broker-X3JvkwLwjutfnSwNFmRTAv).
 - [Protótipo Low/High Fidelity](https://www.figma.com/file/jegfVuFEJKQAzROxfipCPn/password-locker?node-id=54%3A2&t=JHLM2Gwa2P6bLFcQ-1).
 - [MER](https://dbdesigner.page.link/MGXjLeVJCLgFKWcG9).
+- [API (Backend)](https://github.com/TiagoFernandes11/PasswordLocker-Api).
 
 
 ## Funcionalidades
