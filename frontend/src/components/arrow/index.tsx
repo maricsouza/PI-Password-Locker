@@ -1,0 +1,24 @@
+import Image from "next/image"
+import Link from "next/link"
+import style from '../arrow/style.module.scss'
+import arrow from '../../../public/img/arrow.svg'
+
+
+
+interface ArrowProps {
+    returningPage: string
+}
+
+export default function Arrow (props: ArrowProps) {
+    return (
+        <div className={style.arrow}>
+            <Image
+                src={arrow}    
+                alt="Voltar"
+                width={20}
+                height={0}
+                
+            />
+        </div>
+    );
+}

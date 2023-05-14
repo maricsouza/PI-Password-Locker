@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background: linear-gradient(160deg,#021B92,#006C2A);
+    padding: 20px;
+
+
+    .secontainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        width: 70%;
+
+        .centralized {
+            display: flex;
+            flex-grow: 0.46;
+        }
+
+        .title {
+            text-align: center;
+            flex-grow: 3em;
+        }
+
+    }
+
+
+
+}
