@@ -6,15 +6,15 @@ import ButtonType from "@/components/Button"
 import Card from "@/components/card"
 
 
-export default function AlterarSenha () {
+export default function AdicionarSenha () {
     return (
         <div className={style.container}>
-            <Header title="Alterar Senha" returnPage="login" />
+            <Header title="Adicionar Senha" returnPage="login" />
 
             <div className={style.principalBox}>
                 <div className={style.infoContainer}> 
                     <div>
-                        <h1> Alterar senha </h1>
+                        <h1> Dados da senha </h1>
                         <hr />
 
                         <div className={style.box}>
@@ -48,7 +48,7 @@ export default function AlterarSenha () {
 
                     </div>
                 </div>
-                <Card cardFormat={2} text="Preencha os dados ao lado para alterar senha." buttonText="Salvar" />
+                <Card cardFormat={1} text="Preencha os dados ao lado para criar senha." buttonText="Adicionar" />
             </div>
             
 

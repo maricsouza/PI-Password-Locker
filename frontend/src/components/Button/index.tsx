@@ -3,6 +3,7 @@ import style from '../Button/style.module.scss'
 import { TButton } from './styled';
 import { EnumType } from 'typescript';
 import { buttonTypes, sizes } from '@/styles/global.type';
+import Image from "next/image"
 
 interface ContentButtonProps{
     typeOfButton: buttonTypes;
@@ -21,9 +22,10 @@ export default function ButtonType (props: ContentButtonProps )  {
         <TButton {...props}> 
           {props.typeOfButton == buttonTypes.textButton
               ? props.text
-              : <img src={`${props.imagePath}`}></img>
+              : <Image src={props.imagePath ?? ''} alt='Remover' />
           }
         
         </TButton>
+
   )
 }

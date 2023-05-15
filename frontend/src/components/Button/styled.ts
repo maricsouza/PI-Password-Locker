@@ -11,7 +11,7 @@ interface ContentButtonProps {
 
 export const TButton = styled.button<ContentButtonProps>`
     display: flex;
-    font-size: ${(props) => props.fontSize ?? '1rem'};
+    font-size: ${(props) => props.fontSize ?? '0.8rem'};
     color: ${(props) => props.fontColor};
     background-color: ${(props) => props.backColor};
     width: ${(props) => props.size ?? sizes.large};
@@ -28,6 +28,5 @@ export const TButton = styled.button<ContentButtonProps>`
     align-items: center;
     justify-content: center;
 
-
-
+    margin: 0.6rem;
 `
