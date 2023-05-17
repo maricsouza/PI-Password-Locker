@@ -5,14 +5,14 @@ interface ContentButton{
     text?:string;
     fontSize?: string;
     type?: string;
+    largura?: string;
 }
-
 
 export default function Button(props: ContentButton )  {
 
   return (
     <div {...props}>
-        <button className={style.btn}> {props.text} </button>
+        <button className={style.btn} style={{width: props.largura}}> {props.text} </button>
     </div>
   )
 }
