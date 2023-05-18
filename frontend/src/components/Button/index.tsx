@@ -1,18 +1,31 @@
 import React from 'react'
 import style from '../Button/style.module.scss'
+import { TButton } from './styled';
+import { EnumType } from 'typescript';
+import { buttonTypes, sizes } from '@/styles/global.type';
+import Image from "next/image"
 
-interface ContentButton{
+interface ContentButtonProps{
+    typeOfButton: buttonTypes;
     text?:string;
     fontSize?: string;
-    type?: string;
-    largura?: string;
+    imagePath?: string;
+    fontColor: string;
+    backColor: string;
+    size: string;
 }
 
-export default function Button(props: ContentButton )  {
+
+export default function ButtonType (props: ContentButtonProps )  {
 
   return (
-    <div {...props}>
-        <button className={style.btn} style={{width: props.largura}}> {props.text} </button>
-    </div>
+        <TButton {...props}> 
+          {props.typeOfButton == buttonTypes.textButton
+              ? props.text
+              : <Image src={props.imagePath ?? ''} alt='Remover' />
+          }
+        
+        </TButton>
+
   )
 }

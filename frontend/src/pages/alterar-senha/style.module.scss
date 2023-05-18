@@ -1,0 +1,55 @@
+
+.container {
+    background-color: #F0F2F5;
+    height: 100vh;
+    width: 100vw;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .principalBox {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        //align-items: center;
+        
+
+        .infoContainer {
+
+            //width: 37em;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5em;
+    
+            h1 {
+                color: #5A5A66;
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+                font-size: 1.6rem;
+            }
+    
+            hr {
+                border: 1px solid #E1E3E5;
+                margin-bottom: 0.8em;
+            }
+    
+            .box {
+                display: flex;
+                align-items: center;
+                //justify-content: center;
+                flex-direction: row;
+                margin: 0.5em;
+                
+    
+            }
+    
+            .box2 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0.5em;
+            }
+        }
+    }
+
+}
