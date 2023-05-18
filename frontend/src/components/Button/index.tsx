@@ -13,13 +13,14 @@ interface ContentButtonProps{
     fontColor: string;
     backColor: string;
     size: string;
+    onClick: () => void;
 }
 
 
 export default function ButtonType (props: ContentButtonProps )  {
 
   return (
-        <TButton {...props}> 
+        <TButton {...props} onClick={props.onClick}> 
           {props.typeOfButton == buttonTypes.textButton
               ? props.text
               : <Image src={props.imagePath ?? ''} alt='Remover' />

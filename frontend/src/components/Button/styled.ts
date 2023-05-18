@@ -28,5 +28,5 @@ export const TButton = styled.button<ContentButtonProps>`
     align-items: center;
     justify-content: center;
 
-    margin: 0.6rem;
+    margin: 0.61rem;
 `

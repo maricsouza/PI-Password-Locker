@@ -7,6 +7,11 @@ import Card from "@/components/card"
 
 
 export default function AlterarSenha () {
+
+    function teste () {
+        console.log("olá!");
+    }
+
     return (
         <div className={style.container}>
             <Header title="Alterar Senha" returnPage="login" />
@@ -42,13 +47,13 @@ export default function AlterarSenha () {
 
                         <div className={style.box2}>
                             <FullInput/>
-                            <ButtonType backColor="#0051D0" fontColor="#FFF" typeOfButton={buttonTypes.textButton} text="Gerar" fontSize="" size={sizes.large}/>
+                            <ButtonType backColor="#0051D0" fontColor="#FFF" typeOfButton={buttonTypes.textButton} text="Gerar" fontSize="" size={sizes.large} onClick={() => teste()}/>
                         </div>
                         
 
                     </div>
                 </div>
-                <Card cardFormat={2} text="Preencha os dados ao lado para alterar senha." buttonText="Salvar" />
+                <Card cardFormat={1} text="Preencha os dados ao lado para alterar senha." buttonText="Salvar" />
             </div>
             
 
