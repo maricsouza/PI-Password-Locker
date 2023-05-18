@@ -1,4 +1,4 @@
-import ImageWithLogo from "@/components/ImageWithLogo/ImageWithLogo";
+import ImageWithLogo from "@/components/ImageWithLogo";
 import Input from "@/components/Input";
 import style from "../login/style.module.scss";
 import Button from "@/components/Button";
@@ -9,11 +9,11 @@ export default function Login() {
 
   return (
     <div className={style.container}>
-      <ImageWithLogo />
+      <ImageWithLogo largura="320px"/>
       <Input content={"Email"}/>
-      <Input content={"Senha"}/>
+      <Input content={"Senha"} type="password"/>
       <Button text={"Entrar"}/>
-      <text className={style.text}>Não tem uma conta? <Link className={style.linkCadastro} href={"../cadastro"}> Cadastre-se</Link></text>
+      <text className={style.text}>Não tem uma conta? <Link className={style.linkCadastro} href={"../siginUp"}> Cadastre-se</Link></text>
     </div>
   );
 }

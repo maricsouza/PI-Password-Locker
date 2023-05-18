@@ -1,12 +1,17 @@
 import logo from "../../../public/img/Logo.svg"
 import Image from 'next/image'
 
-export default function ImageWithLogo() {
+interface configImage{
+  largura?: string;
+}
+
+
+export default function ImageWithLogo(props: configImage) {
   return (
         <div>
             <Image
               src={logo}
-              width={330}
+              style={{width: props.largura}}
               height={330}  
               alt="Logo do password locker"
             />

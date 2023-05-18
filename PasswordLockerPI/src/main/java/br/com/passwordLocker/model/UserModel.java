@@ -6,6 +6,8 @@
 package br.com.passwordLocker.model;
 
 public class UserModel {
+
+    private int id;
     private String nome;
     private String cpf;
     private String email;
@@ -17,6 +19,15 @@ public class UserModel {
     }
 
     public UserModel(String nome, String cpf, String email, String senha, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
+    }
+
+    public UserModel(int id, String nome, String cpf, String email, String senha, String telefone) {
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -63,4 +74,6 @@ public class UserModel {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public int getId(){return this.id;}
 }
