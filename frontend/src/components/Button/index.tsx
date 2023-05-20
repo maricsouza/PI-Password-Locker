@@ -10,9 +10,9 @@ export default function Button (props: ButtonType )  {
   return (
         <TButton {...props}> 
 
-          {props.typeOfButton === 'textButton'
+          {props.typeofbutton === 'textButton'
               ? props.text
-              : <Image src={props.imagePath ?? ''} alt='Remover' />
+              : <Image src={props.imagepath ?? ''} alt='Remover' />
           }
         
         </TButton>

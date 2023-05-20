@@ -1,19 +1,18 @@
-
 interface ContentButton {
-    fontSize?: string;
-    fontColor: string;
-    backgColor:string;
+    fontsize?: string;
+    fontcolor: string;
+    backgcolor:string;
     size: string;
-    onClick: () => void;
+    onclick: () => void;
 }
 
 interface ButtonImage extends ContentButton {
-    typeOfButton: 'imageButton'
-    imagePath: string;
+    typeofbutton: 'imageButton'
+    imagepath: string;
 }
 
 interface ButtonText extends ContentButton {
-    typeOfButton: 'textButton'
+    typeofbutton: 'textButton'
     text: string;
 }
 

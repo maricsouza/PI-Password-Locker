@@ -43,7 +43,7 @@ export default function AdicionarSenha () {
 
                         <div className={style.box2}>
                             <FullInput/>
-                            <Button backgColor="#0051D0" fontColor="#FFF" typeOfButton="textButton" text="Gerar" fontSize="" size={sizes.large} onClick={ () => console.log('ok')}/>
+                            <Button backgcolor="#0051D0" fontcolor="#FFF" typeofbutton="textButton" text="Gerar" fontsize="" size={sizes.large} onclick={ () => console.log('ok')}/>
                         </div>
                         
 

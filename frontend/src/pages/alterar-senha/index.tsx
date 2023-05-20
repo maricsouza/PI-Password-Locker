@@ -48,7 +48,7 @@ export default function AlterarSenha () {
 
                         <div className={style.box2}>
                             <FullInput/>
-                            <Button backgColor="#0051D0" fontColor="#FFF" typeOfButton="textButton" text="Gerar" fontSize="" size={sizes.large} onClick={() => teste()}/>
+                            <Button backgcolor="#0051D0" fontcolor="#FFF" typeofbutton="textButton" text="Gerar" fontsize="" size={sizes.large} onclick={() => teste()}/>
                         </div>
                         
 

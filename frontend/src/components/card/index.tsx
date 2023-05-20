@@ -18,13 +18,13 @@ export default function Card (props: CardProps) {
             <p> {props.text} </p>
             {props.cardFormat == 1
                 ? <div className={style.buttonBox}>
-                    <Button backgColor="#36B236" fontColor="#FFF" typeOfButton="textButton" text={props.buttonText} size={sizes.large} onClick={ () => console.log('ok')}/>
-                    <Button backgColor="#E1E3E5" fontColor="#FFF" typeOfButton="imageButton" imagePath={remove} size={sizes.xxxsmall} onClick={ () => console.log('ok')}/>
+                    <Button backgcolor="#36B236" fontcolor="#FFF" typeofbutton="textButton" text={props.buttonText} size={sizes.large} onclick={ () => console.log('ok')}/>
+                    <Button backgcolor="#E1E3E5" fontcolor="#FFF" typeofbutton="imageButton" imagepath={remove} size={sizes.xxxsmall} onclick={ () => console.log('ok')}/>
                   </div>
 
                 : <div className={style.buttonBoxF}>
-                    <Button backgColor="#36B236" fontColor="#FFF" typeOfButton="textButton" text={props.buttonText} size={sizes.larger} onClick={ () => console.log('ok')}/>
-                     <Button backgColor="#FA3F38" fontColor="#FFF" typeOfButton="textButton" text={'Excluir conta'} size={sizes.larger} onClick={ () => console.log('ok')}/>
+                    <Button backgcolor="#36B236" fontcolor="#FFF" typeofbutton="textButton" text={props.buttonText} size={sizes.larger} onclick={ () => console.log('ok')}/>
+                     <Button backgcolor="#FA3F38" fontcolor="#FFF" typeofbutton="textButton" text={'Excluir conta'} size={sizes.larger} onclick={ () => console.log('ok')}/>
                   </div>
             
             }

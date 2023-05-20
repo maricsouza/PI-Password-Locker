@@ -5,9 +5,9 @@ import styled from 'styled-components'
 
 export const TButton = styled.button<ContentButton>`
     display: flex;
-    font-size: ${(props) => props.fontSize ?? '0.8rem'};
-    color: ${(props) => props.fontColor};
-    background-color: ${(props) => props.backgColor};
+    font-size: ${(props) => props.fontsize ?? '0.8rem'};
+    color: ${(props) => props.fontcolor};
+    background-color: ${(props) => props.backgcolor};
     width: ${(props) => props.size ?? sizes.large};
     height: 2.6rem;
 
