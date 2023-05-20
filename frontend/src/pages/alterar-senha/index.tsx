@@ -9,7 +9,7 @@ import Button from "@/components/Button"
 
 export default function AlterarSenha () {
 
-    function teste () {
+    function passwordGenerator () {
         console.log("olá!");
     }
 
@@ -47,8 +47,8 @@ export default function AlterarSenha () {
                         <hr />
 
                         <div className={style.box2}>
-                            <FullInput/>
-                            <Button backgcolor="#0051D0" fontcolor="#FFF" typeofbutton="textButton" text="Gerar" fontsize="" size={sizes.large} onclick={() => teste()}/>
+                            <FullInput />
+                            <Button backgcolor="#0051D0" fontcolor="#FFF" typeofbutton="textButton" text="Gerar" fontsize="" size={sizes.large} onclick={() => passwordGenerator()}/>
                         </div>
                         
 
