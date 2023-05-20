@@ -1,19 +1,13 @@
 import { sizes } from '@/styles/global.type';
 import styled from 'styled-components'
 
-interface ContentButtonProps {
-    fontSize?: string;
-    fontColor: string;
-    backColor: string;
-    size?: string;
-}
 
 
-export const TButton = styled.button<ContentButtonProps>`
+export const TButton = styled.button<ContentButton>`
     display: flex;
     font-size: ${(props) => props.fontSize ?? '0.8rem'};
     color: ${(props) => props.fontColor};
-    background-color: ${(props) => props.backColor};
+    background-color: ${(props) => props.backgColor};
     width: ${(props) => props.size ?? sizes.large};
     height: 2.6rem;
 

@@ -4,6 +4,7 @@ import FullInput from "@/components/full-input"
 import { buttonTypes, sizes } from "@/styles/global.type"
 import ButtonType from "@/components/Button"
 import Card from "@/components/card"
+import Button from "@/components/Button"
 
 
 export default function AlterarSenha () {
@@ -47,7 +48,7 @@ export default function AlterarSenha () {
 
                         <div className={style.box2}>
                             <FullInput/>
-                            <ButtonType backColor="#0051D0" fontColor="#FFF" typeOfButton={buttonTypes.textButton} text="Gerar" fontSize="" size={sizes.large} onClick={() => teste()}/>
+                            <Button backgColor="#0051D0" fontColor="#FFF" typeOfButton="textButton" text="Gerar" fontSize="" size={sizes.large} onClick={() => teste()}/>
                         </div>
                         
 

@@ -19,6 +19,7 @@ export default function FullInput (props: FullInputProps) {
                 ? <input className={style.classInput} value={input} onChange={e => setInput(e.target.value)}/>
                 : <input className={style.classFullInput} value={input} onChange={e => setInput(e.target.value)} />
             }
+
         </div>
     )
 }

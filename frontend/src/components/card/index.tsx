@@ -1,9 +1,9 @@
 import { buttonTypes, sizes } from "@/styles/global.type";
-import ButtonType from "../Button";
 import style from './style.module.scss'
 import remove from '../../../public/img/trash.svg'
 import Image from "next/image";
 import user from '../../../public/img/user.png'
+import Button from "../Button";
 
 interface CardProps {
     cardFormat: number
@@ -18,13 +18,13 @@ export default function Card (props: CardProps) {
             <p> {props.text} </p>
             {props.cardFormat == 1
                 ? <div className={style.buttonBox}>
-                    <ButtonType backColor="#36B236" fontColor="#FFF" typeOfButton={buttonTypes.textButton} text={props.buttonText} size={sizes.large}/>
-                    <ButtonType backColor="#E1E3E5" fontColor="#FFF" typeOfButton={buttonTypes.imageButton} imagePath={remove} size={sizes.xxxsmall}/>
+                    <Button backgColor="#36B236" fontColor="#FFF" typeOfButton="textButton" text={props.buttonText} size={sizes.large} onClick={ () => console.log('ok')}/>
+                    <Button backgColor="#E1E3E5" fontColor="#FFF" typeOfButton="imageButton" imagePath={remove} size={sizes.xxxsmall} onClick={ () => console.log('ok')}/>
                   </div>
 
                 : <div className={style.buttonBoxF}>
-                    <ButtonType backColor="#36B236" fontColor="#FFF" typeOfButton={buttonTypes.textButton} text={props.buttonText} size={sizes.larger}/>
-                     <ButtonType backColor="#FA3F38" fontColor="#FFF" typeOfButton={buttonTypes.textButton} text={'Excluir conta'} size={sizes.larger}/>
+                    <Button backgColor="#36B236" fontColor="#FFF" typeOfButton="textButton" text={props.buttonText} size={sizes.larger} onClick={ () => console.log('ok')}/>
+                     <Button backgColor="#FA3F38" fontColor="#FFF" typeOfButton="textButton" text={'Excluir conta'} size={sizes.larger} onClick={ () => console.log('ok')}/>
                   </div>
             
             }
