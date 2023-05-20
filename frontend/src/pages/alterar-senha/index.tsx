@@ -15,7 +15,7 @@ export default function AlterarSenha () {
 
     return (
         <div className={style.container}>
-            <Header title="Alterar Senha" returnPage="login" />
+            <Header title="Alterar Senha" returnPage='/dashboard' />
 
             <div className={style.principalBox}>
                 <div className={style.infoContainer}> 

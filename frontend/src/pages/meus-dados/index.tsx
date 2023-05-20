@@ -9,7 +9,7 @@ import Card from "@/components/card"
 export default function AlterarSenha () {
     return (
         <div className={style.container}>
-            <Header title="Meus Dados" returnPage="login" />
+            <Header title="Meus Dados" returnPage='/dashboard' />
 
             <div className={style.principalBox}>
                 <div className={style.infoContainer}> 

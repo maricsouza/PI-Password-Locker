@@ -12,13 +12,15 @@ interface ArrowProps {
 export default function Arrow (props: ArrowProps) {
     return (
         <div className={style.arrow}>
-            <Image
-                src={arrow}    
-                alt="Voltar"
-                width={20}
-                height={0}
-                
-            />
+            <Link href={props.returningPage}>
+                <Image
+                    src={arrow}    
+                    alt="Voltar"
+                    width={20}
+                    height={0}
+                    
+                />
+            </Link>
         </div>
     );
 }

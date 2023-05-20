@@ -6,11 +6,10 @@ import ButtonType from "@/components/Button"
 import Card from "@/components/card"
 import Button from "@/components/Button"
 
-
 export default function AdicionarSenha () {
     return (
         <div className={style.container}>
-            <Header title="Adicionar Senha" returnPage="login" />
+            <Header title="Adicionar Senha" returnPage='/dashboard' />
 
             <div className={style.principalBox}>
                 <div className={style.infoContainer}> 
