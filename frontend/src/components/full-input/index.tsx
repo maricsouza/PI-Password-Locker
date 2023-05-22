@@ -1,25 +1,23 @@
 import { useState } from 'react';
 import style from './style.module.scss'
+import { InputType } from './styled';
 
-interface FullInputProps {
+interface FullInputProps extends React.ButtonHTMLAttributes<HTMLInputElement> {
     inputTitle?: string;
     imageInput?: string;
     fullInput?: boolean;
+    value?: string | number | any;
+    onchange?: () => void;
+    readonly?: boolean;
 }
 
 
 export default function FullInput (props: FullInputProps) {
-    const [input, setInput] = useState('');
 
     return (
         <div className={style.container}>
             <h2 className={style.title}> {props.inputTitle} </h2>
-            
-            {!props.fullInput
-                ? <input className={style.classInput} value={input} onChange={e => setInput(e.target.value)}/>
-                : <input className={style.classFullInput} value={input} onChange={e => setInput(e.target.value)} />
-            }
-
+            <InputType {...props} value={props.value} onChange={props.onchange} readOnly={props.readonly}/>
         </div>
     )
 }

@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Button (props: ButtonType )  {
   return (
-        <TButton {...props} onClick={props.onclick}> 
+        <TButton {...props} onClick={props.functiononclick}> 
 
           {props.typeofbutton === 'textButton'
               ? props.text

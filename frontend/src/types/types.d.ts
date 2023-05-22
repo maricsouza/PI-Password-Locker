@@ -1,9 +1,9 @@
-interface ContentButton {
-    fontsize?: string;
+interface ContentButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    sizefont?: string;
     fontcolor: string;
     backgcolor:string;
     size: string;
-    onclick: () => void;
+    functiononclick: () => void;
 }
 
 interface ButtonImage extends ContentButton {

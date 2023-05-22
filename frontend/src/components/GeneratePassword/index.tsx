@@ -21,7 +21,6 @@ export default function GeneratePassword() {
     }
 
     setPassword(newPassword);
-    console.log(password);
   }
 
   return (
@@ -29,15 +28,15 @@ export default function GeneratePassword() {
       <h1> Gerar senha forte </h1>
       <hr />
       <div className={style.box}>
-        <FullInput />
+        <FullInput value={password} onchange={() => passwordGenerator()} readonly={true} />
         <Button
           backgcolor="#0051D0"
           fontcolor="#FFF"
           typeofbutton="textButton"
           text="Gerar"
-          fontsize=""
+          sizefont=""
           size={sizes.large}
-          onclick={() => passwordGenerator()}
+          functiononclick={() => passwordGenerator()}
         />
       </div>
     </div>
