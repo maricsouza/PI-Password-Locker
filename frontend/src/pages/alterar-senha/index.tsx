@@ -3,8 +3,16 @@ import style from "./style.module.scss";
 import FullInput from "@/components/full-input";
 import Card from "@/components/card";
 import GeneratePassword from "@/components/GeneratePassword";
+import { useState } from "react";
 
 export default function AlterarSenha() {
+
+  const [website, setWebsite] = useState('');
+
+  function saveChanges () {
+      console.log(website);
+  }
+
   return (
     <div className={style.container}>
       <Header title="Alterar Senha" returnPage="/dashboard" />
@@ -16,7 +24,7 @@ export default function AlterarSenha() {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputTitle="Nome do site" />
+              <FullInput inputTitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)}/>
               <FullInput inputTitle="Nome do usuário do site (opcional)" />
             </div>
 
@@ -32,6 +40,7 @@ export default function AlterarSenha() {
           cardFormat={1}
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
+          form={{siteName: website}}
         />
       </div>
     </div>

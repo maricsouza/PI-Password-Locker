@@ -28,7 +28,7 @@ export default function GeneratePassword() {
       <h1> Gerar senha forte </h1>
       <hr />
       <div className={style.box}>
-        <FullInput value={password} onchange={() => passwordGenerator()} readonly={true} />
+        <FullInput value={password} onChange={() => passwordGenerator()} readOnly={true} />
         <Button
           backgcolor="#0051D0"
           fontcolor="#FFF"
@@ -36,7 +36,7 @@ export default function GeneratePassword() {
           text="Gerar"
           sizefont=""
           size={sizes.large}
-          functiononclick={() => passwordGenerator()}
+          onClick={() => passwordGenerator()}
         />
       </div>
     </div>
