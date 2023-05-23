@@ -1,10 +1,9 @@
 import style from "./style.module.scss";
-import FullInput from "@/components/full-input";
-import Button from "@/components/Button";
+import { FullInput, Button } from "@/components";
 import { sizes } from "@/styles/global.type";
 import { useState } from "react";
 
-export default function GeneratePassword() {
+export function GeneratePassword() {
   const [password, setPassword] = useState("");
 
   function passwordGenerator() {

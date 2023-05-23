@@ -1,8 +1,5 @@
-import Header from "@/components/header";
+import { Header, FullInput, Card, GeneratePassword } from "@/components";
 import style from "./style.module.scss";
-import FullInput from "@/components/full-input";
-import Card from "@/components/card";
-import GeneratePassword from "@/components/GeneratePassword";
 
 export default function AdicionarSenha() {
   return (

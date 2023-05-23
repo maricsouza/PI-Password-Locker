@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 import remove from "../../../public/img/trash.svg";
 import Image from "next/image";
 import user from "../../../public/img/user.png";
-import Button from "../Button";
+import { Button } from "@/components";
 
 interface CardProps {
   cardFormat: number;
@@ -12,7 +12,7 @@ interface CardProps {
   form?: IPassword;
 }
 
-export default function Card(props: CardProps) {
+export function Card(props: CardProps) {
   function saveChanges() {
     console.log(props.form);
   }

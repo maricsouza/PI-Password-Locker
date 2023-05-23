@@ -1,4 +1,4 @@
-import React, { Attributes } from 'react'
+import React from 'react'
 import style from '../Input/styles.module.scss'
 
 interface contentLabel {
@@ -8,7 +8,7 @@ interface contentLabel {
   largura?: string;
 }
 
-export default function Input(props: contentLabel ) {
+export function Input(props: contentLabel ) {
   
   return (
    <div {...props}>

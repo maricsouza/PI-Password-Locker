@@ -6,7 +6,7 @@ interface ContentInfoAlert {
   icon?: any;
 }
 
-export default function InfoAlert(props: ContentInfoAlert) {
+export function InfoAlert(props: ContentInfoAlert) {
   return (
     <div>
       <div className={style.container}>

@@ -5,7 +5,7 @@ interface configImage {
   largura?: string;
 }
 
-export default function ImageLogoVertical(props: configImage) {
+export function ImageLogoVertical(props: configImage) {
   return (
     <div>
       <Image

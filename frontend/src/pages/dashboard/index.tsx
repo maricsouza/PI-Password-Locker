@@ -1,4 +1,4 @@
-import HeaderDashboard from "@/components/HeaderDashboard";
+import { HeaderDashboard } from "@/components";
 import React from "react";
 import style from "../dashboard/style.module.scss";
 

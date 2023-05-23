@@ -7,7 +7,7 @@ interface ArrowProps {
   returningPage: string;
 }
 
-export default function Arrow(props: ArrowProps) {
+export function Arrow(props: ArrowProps) {
   return (
     <div className={style.arrow}>
       <Link href={props.returningPage}>

@@ -1,9 +1,7 @@
 import React from "react";
 import style from "../siginUp/style.module.scss";
 import Link from "next/link";
-import Input from "@/components/Input";
-import ImageWithLogo from "@/components/ImageWithLogo";
-import Button from "@/components/Button";
+import { Input, ImageWithLogo, Button } from "@/components";
 
 export default function SiginUp() {
   return (

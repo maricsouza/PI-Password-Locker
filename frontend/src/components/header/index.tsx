@@ -1,4 +1,4 @@
-import Arrow from "../arrow";
+import { Arrow } from "@/components";
 import style from "./style.module.scss";
 
 interface HeaderProps {
@@ -6,7 +6,7 @@ interface HeaderProps {
   returnPage: string;
 }
 
-export default function Header(props: HeaderProps) {
+export function Header(props: HeaderProps) {
   return (
     <div className={style.container}>
       <div className={style.secontainer}>

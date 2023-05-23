@@ -7,7 +7,7 @@ interface FullInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   fullInput?: boolean;
 }
 
-export default function FullInput(props: FullInputProps) {
+export function FullInput(props: FullInputProps) {
   return (
     <div className={style.container}>
       <h2 className={style.title}> {props.inputtitle} </h2>
