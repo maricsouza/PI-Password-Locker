@@ -6,11 +6,10 @@ import GeneratePassword from "@/components/GeneratePassword";
 import { useState } from "react";
 
 export default function AlterarSenha() {
+  const [website, setWebsite] = useState("");
 
-  const [website, setWebsite] = useState('');
-
-  function saveChanges () {
-      console.log(website);
+  function saveChanges() {
+    console.log(website);
   }
 
   return (
@@ -24,7 +23,11 @@ export default function AlterarSenha() {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)}/>
+              <FullInput
+                inputtitle="Nome do site"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
               <FullInput inputtitle="Nome do usuário do site (opcional)" />
             </div>
 
@@ -40,7 +43,7 @@ export default function AlterarSenha() {
           cardFormat={1}
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
-          form={{siteName: website}}
+          form={{ siteName: website }}
         />
       </div>
     </div>
