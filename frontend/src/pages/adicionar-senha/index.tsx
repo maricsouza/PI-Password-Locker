@@ -16,13 +16,13 @@ export default function AdicionarSenha() {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputTitle="Nome do site" />
-              <FullInput inputTitle="Nome do usuário do site (opcional)" />
+              <FullInput inputtitle="Nome do site" />
+              <FullInput inputtitle="Nome do usuário do site (opcional)" />
             </div>
 
             <div className={style.box}>
-              <FullInput inputTitle="Nova senha" />
-              <FullInput inputTitle="Confirmar senha" />
+              <FullInput inputtitle="Nova senha" />
+              <FullInput inputtitle="Confirmar senha" />
             </div>
           </div>
 

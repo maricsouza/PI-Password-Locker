@@ -9,7 +9,7 @@ interface CardProps {
     cardFormat: number
     text: string;
     buttonText: string;
-    form: IPassword;
+    form?: IPassword;
 }
 
 export default function Card (props: CardProps) {

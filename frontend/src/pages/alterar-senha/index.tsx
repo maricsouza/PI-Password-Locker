@@ -24,13 +24,13 @@ export default function AlterarSenha() {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputTitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)}/>
-              <FullInput inputTitle="Nome do usuário do site (opcional)" />
+              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)}/>
+              <FullInput inputtitle="Nome do usuário do site (opcional)" />
             </div>
 
             <div className={style.box}>
-              <FullInput inputTitle="Nova senha" />
-              <FullInput inputTitle="Confirmar senha" />
+              <FullInput inputtitle="Nova senha" />
+              <FullInput inputtitle="Confirmar senha" />
             </div>
           </div>
 
