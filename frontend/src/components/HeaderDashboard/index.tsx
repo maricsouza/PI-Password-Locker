@@ -1,13 +1,10 @@
 import React from "react";
 import style from "../HeaderDashboard/style.module.scss";
-import ImageLogoVertical from "../ImageLogoVertical";
-import TypePasword from "../TypePassword";
-import Button from "../Button";
-import InfoAlert from "../InfoAlert";
+import { ImageLogoVertical, TypePasword, Button, InfoAlert } from "@/components"
 
 interface ContentHeaderDashboard {}
 
-export default function HeaderDashboard(props: ContentHeaderDashboard) {
+export function HeaderDashboard(props: ContentHeaderDashboard) {
   return (
     <div>
       <div className={style.container}>
@@ -27,7 +24,7 @@ export default function HeaderDashboard(props: ContentHeaderDashboard) {
               <TypePasword text="Dentro do padrão" quantidade={4} />
             </div>
             <div className={style.btnAdd}>
-              <Button text="Adicionar nova senha" largura="300px" />
+              <Button text="Adicionar nova senha" size="300px" typeofbutton="textButton"/>
             </div>
           </div>
         </div>

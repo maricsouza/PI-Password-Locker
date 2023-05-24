@@ -1,10 +1,9 @@
 import style from "./style.module.scss";
-import FullInput from "@/components/full-input";
-import Button from "@/components/Button";
+import { FullInput, Button } from "@/components";
 import { sizes } from "@/styles/global.type";
 import { useState } from "react";
 
-export default function GeneratePassword() {
+export function GeneratePassword() {
   const [password, setPassword] = useState("");
 
   function passwordGenerator() {
@@ -28,7 +27,11 @@ export default function GeneratePassword() {
       <h1> Gerar senha forte </h1>
       <hr />
       <div className={style.box}>
-        <FullInput value={password} onChange={() => passwordGenerator()} readOnly={true} />
+        <FullInput
+          value={password}
+          onChange={() => passwordGenerator()}
+          readOnly={true}
+        />
         <Button
           backgcolor="#0051D0"
           fontcolor="#FFF"

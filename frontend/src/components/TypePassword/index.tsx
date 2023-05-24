@@ -6,7 +6,7 @@ interface ContentTypassword {
   quantidade?: number;
 }
 
-export default function TypePasword(props: ContentTypassword) {
+export function TypePasword(props: ContentTypassword) {
   return (
     <div>
       <div className={style.container}>

@@ -1,4 +1,4 @@
-import React, { Attributes } from 'react'
+import React from 'react'
 import style from '../Input/styles.module.scss'
 
 interface contentLabel {
@@ -8,13 +8,13 @@ interface contentLabel {
   largura?: string;
 }
 
-export default function Input(props: contentLabel ) {
+export function Input(props: contentLabel ) {
   
   return (
    <div {...props}>
     <div className={style.container}>
       <label className={style.label} >{props.content}</label>
-      <input className={style.input} type={props.type} style={{width: props.largura, fontsize: props.fontsize}}/>
+      <input className={style.input} type={props.type} style={{width: props.largura, fontSize: props.fontsize}}/>
     </div>
    </div>
   )

@@ -1,7 +1,7 @@
 interface ContentButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     sizefont?: string;
-    fontcolor: string;
-    backgcolor:string;
+    fontcolor?: string;
+    backgcolor?:string;
     size: string;
 }
 

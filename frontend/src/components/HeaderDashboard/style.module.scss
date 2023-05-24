@@ -1,50 +1,50 @@
 .container {
-    background-image: linear-gradient(to right bottom, #021b92, #0046a7, #00588b, #006457, #006c2a);
-    height: 30vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #021b92,
+    #0046a7,
+    #00588b,
+    #006457,
+    #006c2a
+  );
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .contentInfo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
 
-    .contentInfo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-
-        .rowUp {
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 40px;
-            justify-content: center;
-            align-items: center;
-            gap: 400px;
-
-
-        
-
-        }
-
-        .rowDown {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 400px;
-
-            .types {
-                display: flex;
-                flex-direction: row;
-                flex-grow: 1;
-                gap: 48px;
-            }
-
-            .btnAdd {
-                flex-grow: 2;
-            }
-
-        }
-
+    .rowUp {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 40px;
+      justify-content: center;
+      align-items: center;
+      gap: 400px;
     }
 
+    .rowDown {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 400px;
+
+      .types {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        gap: 48px;
+      }
+
+      .btnAdd {
+        flex-grow: 2;
+      }
+    }
+  }
 }

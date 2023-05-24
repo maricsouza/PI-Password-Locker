@@ -9,10 +9,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    //align-items: center;
 
     .infoContainer {
-      //width: 37em;
       display: flex;
       flex-direction: column;
       margin-bottom: 5em;
@@ -32,7 +30,6 @@
       .box {
         display: flex;
         align-items: center;
-        //justify-content: center;
         flex-direction: row;
         margin: 0.5em;
       }
