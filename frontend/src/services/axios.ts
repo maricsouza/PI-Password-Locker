@@ -1,5 +1,4 @@
 import axios from "axios";
-import { TokenClass } from "typescript";
 
 const axiosInstance = axios.create({
   baseURL: "",
@@ -22,7 +21,7 @@ export class Account {
     let res = await axiosInstance.post("", data, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${TokenClass}`,
+        Authorization: "token",
       },
     });
 
