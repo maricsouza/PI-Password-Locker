@@ -4,7 +4,6 @@ interface IPassword {
   siteUsername?: string;
   password?: string;
 }
-
 interface IAccount {
   id?: string;
   name?: string;
