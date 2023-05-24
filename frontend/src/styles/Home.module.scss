@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -147,6 +147,7 @@
   }
 
   .center {
+    border: 1px solid red;
     padding: 8rem 0 6rem;
   }
 
@@ -161,6 +162,7 @@
 
   .description a {
     padding: 1rem;
+    border: 1px solid blue;
   }
 
   .description p,
