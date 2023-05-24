@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import style from './style.module.scss'
-import { InputType } from './styled';
+import { InputClass, InputType } from './styled';
 
 interface FullInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     inputTitle?: string;
@@ -12,9 +12,10 @@ interface FullInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export default function FullInput (props: FullInputProps) {
 
     return (
-        <div className={style.container}>
-            <h2 className={style.title}> {props.inputTitle} </h2>
+        <InputClass>
+            <h2 className={"title"}> {props.inputTitle} </h2>
             <InputType {...props}/>
-        </div>
+        </InputClass>
+
     )
 }

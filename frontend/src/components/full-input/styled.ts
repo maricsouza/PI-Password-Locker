@@ -22,4 +22,16 @@ export const InputType = styled.input<FullInputProps>`
         border: 1px solid #E1E3E5;
         color: #787880
 
+`;
+
+export const InputClass = styled.div`
+
+    margin: 0.3em;
+
+    .title {
+        font-size: 1em;
+        color: #787880;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+}
 `
