@@ -4,10 +4,10 @@ import { useState } from "react";
 
 export default function AlterarSenha() {
   const [website, setWebsite] = useState("");
+  const [user, setUser] = useState("");
+  const [password,setPassword] = useState("");
+  const [confirmedPassword,setConfirmedPassword] = useState("");
 
-  function saveChanges() {
-    console.log(website);
-  }
 
   return (
     <div className={style.container}>
@@ -25,12 +25,24 @@ export default function AlterarSenha() {
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
               />
-              <FullInput inputtitle="Nome do usuário do site (opcional)" />
+              <FullInput inputtitle=
+                "Nome do usuário do site (opcional)" 
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+              />
             </div>
 
             <div className={style.box}>
-              <FullInput inputtitle="Nova senha" />
-              <FullInput inputtitle="Confirmar senha" />
+              <FullInput 
+                inputtitle="Nova senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <FullInput 
+                inputtitle="Confirmar senha"
+                value={confirmedPassword}
+                onChange={(e) => setConfirmedPassword(e.target.value)}
+              />
             </div>
           </div>
 
@@ -40,7 +52,7 @@ export default function AlterarSenha() {
           cardFormat={1}
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
-          form={{ siteName: website }}
+          
         />
       </div>
     </div>

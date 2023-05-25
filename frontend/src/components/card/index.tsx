@@ -9,12 +9,12 @@ interface CardProps {
   cardFormat: number;
   text: string;
   buttonText: string;
-  form?: IPassword;
+  // COMO TIPAR OS DADOS QUE ESTÃO VINDO POR PROPS?
 }
 
 export function Card(props: CardProps) {
   function saveChanges() {
-    console.log(props.form);
+    
   }
 
   return (

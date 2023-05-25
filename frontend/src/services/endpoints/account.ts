@@ -4,12 +4,12 @@ export class Account {
 
   //ENDPOINT :: LOGIN => email e senha
   async login (data: IAccount) {
-    let res = await api.get("", {
+    let res = await api.post("/usuarios/login", {
       // ??? - LOGIN E SENHA COMO HEADER?
 
       headers: {
-        usuario: "",
-        senha: ""
+        usuario: data.email,
+        senha: data.password
       }
     })
 
@@ -24,13 +24,13 @@ export class Account {
 
   // ENDPOINT :: CRIAR CONTA => nome, email, telefone e senha
   async createAccount(data: IAccount) {
-    let res = await api.post("", data, {
-      headers: {
-        token: ""
-      }
-    });
+    let res = await api.post("/usuarios", {
+      nome: data.name,
+      email: data.email,
+      senha: data.password,
+      telefone: data.phoneNumber
+    } );
 
-    // ??? - TOKEN PARA CADASTRAR USUÁRIO?
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
     }
@@ -40,7 +40,7 @@ export class Account {
 
   // ENDPOINT :: ALTERAR DADOS DA CONTA => id, nome, email, telefone e senha
   async modifyAccountData(data: IAccount) {
-    let res = await api.post("", data, {
+    let res = await api.put("/usuarios", data, {
       headers: {
         token: ""
       },
@@ -55,7 +55,7 @@ export class Account {
 
   //ENDPOINT :: EXCLUIR CONTA => id
   async deleteAccount () {
-    let res = await api.delete("", {
+    let res = await api.delete("/usuarios", {
 
       // Verificar headers
       headers: {
