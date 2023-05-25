@@ -1,4 +1,11 @@
-.container{
+.container {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+
+    .icon Button {
+        margin: 0;
+        align-items: flex-start;
+    }
 }

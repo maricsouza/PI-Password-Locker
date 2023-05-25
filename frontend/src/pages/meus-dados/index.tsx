@@ -1,7 +1,5 @@
-import Header from "@/components/Header";
+import { Header, FullInput, Card} from "@/components";
 import style from "./style.module.scss";
-import FullInput from "@/components/FullInput";
-import Card from "@/components/Card";
 
 export default function AlterarSenha() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../siginUp/style.module.scss";
+import style from "../sign-up/style.module.scss";
 import Link from "next/link";
 import { Input, ImageWithLogo, Button } from "@/components";
 
