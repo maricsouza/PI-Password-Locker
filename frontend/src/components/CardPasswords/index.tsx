@@ -21,7 +21,9 @@ export function CardPasswords(props: CardProps) {
         <div className={style.number}>{props.number}</div>
         <div className={style.siteName}>{props.name}</div>
         </div>
+      <div>
 
+      </div>
         <div className={style.ultimaAlter}>
         <div className={style.labelPassword}>Ultima alteração</div>
           {props.ultimaAlter}
