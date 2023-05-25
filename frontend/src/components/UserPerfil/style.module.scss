@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .name {
+                text-align: flex-end;
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+            
+            .linkPerfil {
+                font-size: 16px;
+                color: #BFBFCC;
+            }
+        }
+    }
+}
