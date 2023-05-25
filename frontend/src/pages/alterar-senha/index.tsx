@@ -52,7 +52,7 @@ export default function AlterarSenha() {
           cardFormat={1}
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
-          
+          action="M"
         />
       </div>
     </div>

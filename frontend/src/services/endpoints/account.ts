@@ -15,6 +15,7 @@ export class Account {
    
     if(res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro ao comunicar com backend, retorno status ${res.status}`)
     }
 
     return res.data;
@@ -32,6 +33,7 @@ export class Account {
 
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;
@@ -54,6 +56,7 @@ export class Account {
 
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;
@@ -72,6 +75,7 @@ export class Account {
 
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;

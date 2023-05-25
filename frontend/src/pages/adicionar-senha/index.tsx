@@ -29,6 +29,7 @@ export default function AdicionarSenha() {
           cardFormat={1}
           text="Preencha os dados ao lado para criar senha."
           buttonText="Adicionar"
+          action="A"
         />
       </div>
     </div>

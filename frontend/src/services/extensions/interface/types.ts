@@ -12,4 +12,9 @@ interface IAccount {
   password?: string;
 }
 
+interface ILogged {
+  idUser?: string,
+  token?: string,
+  valido?: boolean 
+}
 

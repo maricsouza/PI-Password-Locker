@@ -9,12 +9,13 @@ interface CardProps {
   cardFormat: number;
   text: string;
   buttonText: string;
+  action: 'A' | 'M' | 'D'
   // COMO TIPAR OS DADOS QUE ESTÃO VINDO POR PROPS?
 }
 
 export function Card(props: CardProps) {
   
-  function saveChanges() {
+  function saveChanges(action: string) {
     
   }
 
@@ -30,7 +31,7 @@ export function Card(props: CardProps) {
             typeofbutton="textButton"
             text={props.buttonText}
             size={sizes.large}
-            onClick={saveChanges}
+            onClick={() => saveChanges(props.action)}
           />
           <Button
             backgcolor="#E1E3E5"
@@ -38,7 +39,7 @@ export function Card(props: CardProps) {
             typeofbutton="imageButton"
             imagepath={remove}
             size={sizes.xxxsmall}
-            onClick={saveChanges}
+            onClick={() => saveChanges('D')}
           />
         </div>
       ) : (
@@ -49,7 +50,7 @@ export function Card(props: CardProps) {
             typeofbutton="textButton"
             text={props.buttonText}
             size={sizes.larger}
-            onClick={saveChanges}
+            onClick={() => saveChanges(props.action)}
           />
           <Button
             backgcolor="#FA3F38"
@@ -57,7 +58,7 @@ export function Card(props: CardProps) {
             typeofbutton="textButton"
             text={"Excluir conta"}
             size={sizes.larger}
-            onClick={saveChanges}
+            onClick={() => saveChanges('D')}
           />
         </div>
       )}

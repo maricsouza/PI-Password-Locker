@@ -12,6 +12,7 @@ export class Password {
 
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;
@@ -31,6 +32,7 @@ export class Password {
 
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;
@@ -52,6 +54,7 @@ export class Password {
 
     if (res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;
@@ -66,6 +69,7 @@ export class Password {
 
     if(res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO
+      console.log(`erro na consulta da api, retorno status ${res.status}`)
     }
 
     return res.data;
