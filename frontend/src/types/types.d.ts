@@ -17,3 +17,9 @@ interface ButtonText extends ContentButton {
 
 
 type ButtonType = ButtonImage | ButtonText;
+
+
+// interface IError {
+//     error: string,
+//     message: string
+// }

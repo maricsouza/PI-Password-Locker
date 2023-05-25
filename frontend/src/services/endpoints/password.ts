@@ -2,11 +2,11 @@ import { api } from "../extensions/axios";
 
 export class Password {
   // ENDPOINT :: BUSCAR SENHAS => idUSER (id criptografado em um token?)
-  async getPasswords(id: string) {
+  async getPasswords(id: IAccount) {
     let res = await api.get(`/senhas/senhasuser`, {
       headers: {
-        idUser: '',
-        token: ''
+        idUser: process.env.NEXTJS_USERID,
+        token: process.env.NEXTJS_VALID_TOKEN
       }
     });
 
@@ -25,7 +25,7 @@ export class Password {
       usuarioSite: data.siteUsername
     }, {
       headers: {
-        token: ""
+        token: process.env.NEXTJS_VALID_TOKEN
       }
     });
 
@@ -46,7 +46,7 @@ export class Password {
     }, {
       headers: {
         idSenha: changedData.id,
-        token: ""
+        token: process.env.NEXTJS_VALID_TOKEN
       }
     });
 
@@ -57,10 +57,10 @@ export class Password {
     return res.data;
   }
 
-  async deletePassword () {
+  async deletePassword (id: IPassword) {
     let res = await api.delete("/senhas", {
       headers: {
-        userId: ""
+        IdSenha: id.id
       }
     })
 

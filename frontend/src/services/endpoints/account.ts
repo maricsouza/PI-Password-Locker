@@ -1,5 +1,4 @@
 import { api } from "../extensions/axios";
-
 export class Account {
 
   //ENDPOINT :: LOGIN => email e senha
@@ -40,9 +39,16 @@ export class Account {
 
   // ENDPOINT :: ALTERAR DADOS DA CONTA => id, nome, email, telefone e senha
   async modifyAccountData(data: IAccount) {
-    let res = await api.put("/usuarios", data, {
+    let res = await api.put("/usuarios", {
+      nome: data.name,
+      email: data.email,
+      senha: data.password,
+      telefone: data.phoneNumber
+
+    }, {
       headers: {
-        token: ""
+        idUser: data.id,
+        token: process.env.NEXTJS_VALID_TOKEN
       },
     });
 
@@ -54,12 +60,13 @@ export class Account {
   }
 
   //ENDPOINT :: EXCLUIR CONTA => id
-  async deleteAccount () {
+  async deleteAccount (id: IAccount) {
     let res = await api.delete("/usuarios", {
 
       // Verificar headers
       headers: {
-        userId: "idusuario"
+        userId: id.id,
+        token: process.env.NEXTJS_VALID_TOKEN
       }
     })
 

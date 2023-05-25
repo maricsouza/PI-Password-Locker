@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../Input/styles.module.scss'
 
-interface contentLabel {
+interface contentLabel extends React.InputHTMLAttributes<HTMLInputElement>{
   content?: string;
   fontsize?: string;
   type?: string;
