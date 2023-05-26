@@ -7,44 +7,35 @@
     #006457,
     #006c2a
   );
-  height: 30vh;
+  align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  .contentInfo {
+  height: 38vh;
+ 
+  .row1{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    gap: 300px;
+    margin-bottom: 50px;
+  }
+  .row2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-    .rowUp {
+    .typePassword{
       display: flex;
       flex-direction: row;
-      margin-bottom: 40px;
-      justify-content: center;
-      align-items: center;
-      gap: 400px;
+      gap: 40px;
     }
-
-    .rowDown {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 400px;
-
-      .types {
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        gap: 48px;
-      }
-
-      .btnAdd {
-        flex-grow: 2;
-      }
+    
+    .btnAdicionar{
+        Button{
+          height: 6vh;
+        }
     }
   }
 }

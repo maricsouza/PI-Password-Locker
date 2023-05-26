@@ -3,14 +3,14 @@ import style from "../TypePassword/style.module.scss";
 
 interface ContentTypassword {
   text?: string;
-  quantidade?: number;
+  quantify?: number;
 }
 
 export function TypePasword(props: ContentTypassword) {
   return (
     <div>
       <div className={style.container}>
-        <div className={style.quantidade}>{props.quantidade}</div>
+        <div className={style.quantify}>{props.quantify}</div>
         <p className={style.text}>{props.text}</p>
       </div>
     </div>

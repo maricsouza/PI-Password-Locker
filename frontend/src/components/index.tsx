@@ -10,3 +10,6 @@ export { Input } from "./Input";
 export { TypePasword } from "./TypePassword";
 export { Button } from "./Button";
 export { Arrow } from "./Arrow";
+export { UserPerfil } from "./UserPerfil";
+export { CardPasswords } from "./CardPasswords";
+export { ButtonStatus } from "./ButtonStatus";
