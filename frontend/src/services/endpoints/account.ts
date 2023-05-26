@@ -3,15 +3,15 @@ export class Account {
 
   //ENDPOINT :: LOGIN => email e senha
   async login (data: IAccount) {
-    let res = await api.post("/usuarios/login", {
-      // ??? - LOGIN E SENHA COMO HEADER?
-
+    console.log(data);
+    let res = await api.post("/usuarios/login", data, {
       headers: {
         usuario: data.email,
         senha: data.password
       }
     })
 
+    console.log(res);
    
     if(res.status !== 200) {
       // TODO :: RETORNO MENSAGEM DE ERRO

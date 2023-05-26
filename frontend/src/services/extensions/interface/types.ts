@@ -18,3 +18,8 @@ interface ILogged {
   valido?: boolean 
 }
 
+interface IError {
+  status: number,
+  message: string
+}
+

@@ -11,6 +11,7 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password,setPassword] = useState("");
+  // const nav = useNavigate();
 
   async function login (email: string, password: string) {
     
@@ -33,7 +34,10 @@ export default function Login() {
       return
     }
 
-    console.log(resp);
+    process.env.NEXTJS_VALID_TOKEN = resp.token;
+    process.env.NEXTJS_USERID = resp.idUser;
+
+    
 
   }
 

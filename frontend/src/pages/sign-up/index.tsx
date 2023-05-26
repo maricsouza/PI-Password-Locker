@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import style from "../siginUp/style.module.scss";
+import style from "../sign-up/style.module.scss";
 import Link from "next/link";
 import { Input, ImageWithLogo, Button } from "@/components";
 import { Account } from "@/services/endpoints/account";
 
 const api = new Account()
 
-export default function SiginUp() {
+export default function SignUp() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,9 +27,11 @@ export default function SiginUp() {
       console.log("senhas não batem");
     }
 
+    console.log({name: name, password: pass, email: email, phoneNumber: phone});
+
     const resp = await api.createAccount({name: name, password: pass, email: email, phoneNumber: phone});
 
-    console.log(resp);
+    
   }
 
 
