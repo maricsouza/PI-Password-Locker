@@ -6,11 +6,11 @@ import edit from "../../../public/img/edit.svg";
 import remove from "../../../public/img/trash.svg";
 import { sizes } from "@/styles/global.type";
 import { useState } from "react";
-
-import ReactModal from "react-modal";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import ReactModal from "react-modal";
+
 interface CardProps {
   number: number;
   name: string;
