@@ -4,32 +4,35 @@ import view from "../../../public/img/view.svg";
 import edit from "../../../public/img/edit.svg";
 import remove from "../../../public/img/trash.svg";
 import { sizes } from "@/styles/global.type";
+import { Password } from "@/services/endpoints/password";
+import { toast } from "react-toastify";
 
 interface CardProps {
-  number: number;
-  name: string;
-  ultimaAlter: any;
-  password: string;
-  fontcolor?:string;
+  passwordInfos: RIPassword,
+  onRemove: () => void;
+  onUpdate: () => void;
 }
 
-export function CardPasswords(props: CardProps) {
+const api = new Password()
+
+// TODO:: Isso está totalmente desproporcional
+export function CardPasswords({passwordInfos, ...props}: CardProps) {
   return (
     <div className={style.container}>
       <div className={style.row}>
         <div style={{display:'flex', flexDirection:'row', gap:10, width:'200px'}}>
-        <div className={style.number}>{props.number}</div>
-        <div className={style.siteName}>{props.name}</div>
+        <div className={style.number}>{passwordInfos.idSenha}</div>
+        <div className={style.siteName}>{passwordInfos.titulo}</div>
         </div>
 
         <div className={style.ultimaAlter}>
         <div className={style.labelPassword}>Ultima alteração</div>
-          {props.ultimaAlter}
+          {passwordInfos.dataAlteracao}
         </div>
 
         <div>
           <div className={style.labelPassword}>Senha</div>
-          <div className={style.password}>{props.password}</div>
+          <div className={style.password}>{passwordInfos.senha}</div>
         </div>
 
         <div className={style.buttons}>
@@ -49,6 +52,7 @@ export function CardPasswords(props: CardProps) {
               typeofbutton="imageButton"
               imagepath={remove}
               size={sizes.xxxsmall}
+              onClick={props.onRemove}
             />
           </div>
           <div className={style.buttonEdit}>
@@ -58,6 +62,7 @@ export function CardPasswords(props: CardProps) {
               typeofbutton="imageButton"
               imagepath={edit}
               size={sizes.xxxsmall}
+              onClick={props.onUpdate}
             />
           </div>
         </div>
