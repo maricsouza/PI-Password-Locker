@@ -53,6 +53,7 @@ export default function AlterarSenha() {
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
           action="M"
+          form={{siteName: website, siteUsername: user, password: password, interf:"password"}}
         />
       </div>
     </div>

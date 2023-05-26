@@ -25,11 +25,12 @@ export default function SignUp() {
     if(!pass.match(confirmPass)) {
       // TODO :: MENSAGEM DE ERRO
       console.log("senhas não batem");
+      return
     }
 
     console.log({name: name, password: pass, email: email, phoneNumber: phone});
 
-    const resp = await api.createAccount({name: name, password: pass, email: email, phoneNumber: phone});
+    const resp = await api.createAccount({name: name, password: pass, email: email, phoneNumber: phone, interf:"account"});
 
     
   }

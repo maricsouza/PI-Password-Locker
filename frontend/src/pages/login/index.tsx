@@ -28,7 +28,7 @@ export default function Login() {
       return
     }
 
-    const resp = await api.login({email: email, password: password});
+    const resp = await api.login({email: email, password: password, interf:"account"});
 
     if( resp === undefined) {
       console.log("erro no retorno da requisição")
@@ -38,8 +38,6 @@ export default function Login() {
     process.env.NEXTJS_VALID_TOKEN = resp.token;
     process.env.NEXTJS_USERID = resp.idUser;
 
-    
-
   }
 
   return (
@@ -47,8 +45,12 @@ export default function Login() {
       <ImageWithLogo largura="320px" />
       <Input content={"Email"} value={email} onChange={(e) => setEmail(e.target.value)} />
       <Input content={"Senha"} type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <Link href={"/dashboard"} />
-      <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large} onClick={() => login(email,password)} />
+      <Link href={"/dashboard"}
+        onClick={() => login(email,password)}
+      > 
+        <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large}  />
+      </Link>
+      
       <text className={style.text}>
         Não tem uma conta?{" "}
         <Link className={style.linkCadastro} href={"../siginUp"}>
