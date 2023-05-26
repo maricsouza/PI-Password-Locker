@@ -4,7 +4,10 @@ import { useState } from "react";
 
 export default function AlterarSenha() {
   const [website, setWebsite] = useState("");
+  const [edit, setEdit] = useState(false);
 
+
+  
   function saveChanges() {
     console.log(website);
   }

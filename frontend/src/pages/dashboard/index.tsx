@@ -1,5 +1,5 @@
 import { CardPasswords, HeaderDashboard } from "@/components";
-import React from "react";
+import React, { useState } from "react";
 import style from "../dashboard/style.module.scss";
 
 export default function dashboard() {
@@ -10,7 +10,6 @@ export default function dashboard() {
       name: "Facebook",
       password: "**************",
       ultimaAlter:"12/02/2023",
-      btnStatus:"Fraco",
     },
     {
       number: 2,
@@ -37,8 +36,8 @@ export default function dashboard() {
     },
     {
       number: 5,
-      name: "Los Hermanos",
-      password: "*****",
+      name: "Los Hermanos de cabron",
+      password: "*********",
       
       ultimaAlter:"12/02/2023",
      
@@ -52,12 +51,14 @@ export default function dashboard() {
      
     },
   ]
+
+
   return (
     <div>
       <div className={style.container}>
         <HeaderDashboard />
         {DATA.map((item)=>
-          <CardPasswords number={item.number} name={item.name} ultimaAlter={item.ultimaAlter} password={item.password} />
+          <CardPasswords key={item.number} number={item.number} name={item.name} ultimaAlter={item.ultimaAlter}  />
         )}
       </div>
     </div>
