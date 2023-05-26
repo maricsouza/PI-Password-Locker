@@ -47,7 +47,7 @@ export default function Login() {
       <ImageWithLogo largura="320px" />
       <Input content={"Email"} value={email} onChange={(e) => setEmail(e.target.value)} />
       <Input content={"Senha"} type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <Link href={"/dashboard"}>
+      <Link href={"/dashboard"} />
       <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large} onClick={() => login(email,password)} />
       <text className={style.text}>
         Não tem uma conta?{" "}
