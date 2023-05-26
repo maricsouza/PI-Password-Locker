@@ -5,7 +5,6 @@ import { Input, ImageWithLogo, Button } from "@/components";
 import { Account } from "@/services/endpoints/account";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
-import { signIn } from "next-auth/react";
 
 const api = new Account()
 
@@ -41,7 +40,6 @@ export default function SignUp() {
 
   return (
     <div className={style.container}>
-      <button onClick={() => signIn()}> AAA </button>
       <div className={style.forms}>
         <div className={style.imgLogo}>
           <ImageWithLogo largura="320px" />

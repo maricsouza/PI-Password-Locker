@@ -9,8 +9,6 @@ import { Account } from "@/services/endpoints/account";
 
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
-import { setCookie } from "nookies";
-import { signIn } from "next-auth/react";
 import { useDispatch } from "react-redux";
 import { setCredencials } from "@/redux/slices/userSlice";
 
@@ -71,7 +69,6 @@ export default function Login() {
         <Link className={style.linkCadastro} href={"sign-up"}>
           Cadastre-se
         </Link>
-        <button onClick={a}> AAAAAAAAA </button>
       </text>
     </div>
   );
