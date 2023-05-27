@@ -21,15 +21,18 @@
     "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
     "react-phone-number-input": "^3.2.21",
     "react-redux": "^8.0.5",
     "react-toastify": "^9.1.3",
     "sass": "^1.62.1",
+    "sass-loader": "^13.3.0",
     "styled-components": "6.0.0-rc.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@types/cookie": "^0.5.1",
+    "@types/react-modal": "^3.16.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "redux-devtools-extension": "^2.13.9"
   }

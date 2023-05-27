@@ -72,7 +72,7 @@ export function Card(props: CardProps) {
 
   return (
     <div className={style.container}>
-      <Image alt="Usuario" src={user} />
+      <Image style={{width:"130px", height:"100px"}} alt="Usuario" src={user} />
       <p> {props.text} </p>
       {props.cardFormat == 1 ? (
         <div className={style.buttonBox}>
@@ -81,16 +81,16 @@ export function Card(props: CardProps) {
             fontcolor="#FFF"
             typeofbutton="textButton"
             text={props.buttonText}
-            size={sizes.large}
             onClick={props.onConfirm}
+            size="14em"
           />
           <Button
             backgcolor="#E1E3E5"
             fontcolor="#FFF"
             typeofbutton="imageButton"
             imagepath={remove}
-            size={sizes.xxxsmall}
             onClick={props.onDelete}
+            size="10em"
           />
         </div>
       ) : (
@@ -100,8 +100,8 @@ export function Card(props: CardProps) {
             fontcolor="#FFF"
             typeofbutton="textButton"
             text={props.buttonText}
-            size={sizes.larger}
             onClick={props.onConfirm}
+            size="20em"
           />
           <Button
             backgcolor="#FA3F38"

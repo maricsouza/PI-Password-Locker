@@ -11,7 +11,7 @@ export function Arrow(props: ArrowProps) {
   return (
     <div className={style.arrow}>
       <Link href={props.returningPage}>
-        <Image src={arrow} alt="Voltar" width={20} height={0} />
+        <Image src={arrow} alt="Voltar" width={30} height={0} />
       </Link>
     </div>
   );

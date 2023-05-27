@@ -1,5 +1,6 @@
 import React from "react";
 import style from "../HeaderDashboard/style.module.scss";
+import add from "../../../public/img/add.svg";
 import {
   Button,
   ImageLogoVertical,
@@ -8,6 +9,7 @@ import {
   UserPerfil,
 } from "@/components";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ContentHeaderDashboard {}
 
@@ -35,11 +37,11 @@ export function HeaderDashboard(props: ContentHeaderDashboard) {
             </div>
             <div className={style.btnAdicionar}>
               <Link href={"/adicionar-senha"}>
-              <Button
-                typeofbutton="textButton"
-                text="Adicionar nova senha"
-                size="350px"
-              /></Link>
+                <button>
+                  <Image src={add} alt="Botão adicionar"/>
+                  Adicionar nova senha
+                </button>
+                </Link>
             </div>
           </div>
         </div>

@@ -66,7 +66,8 @@ export default function Login() {
       
       <text className={style.text}>
         Não tem uma conta?{" "}
-        <Link className={style.linkCadastro} href={"sign-up"}>
+        <Link className={style.linkCadastro} href={"../sign-up"}>
+          {" "}
           Cadastre-se
         </Link>
       </text>
