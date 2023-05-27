@@ -15,7 +15,6 @@ interface RIPassword {
 }
 
 interface IAccount {
-  interf: 'account'
   id?: string;
   name?: string;
   email?: string;

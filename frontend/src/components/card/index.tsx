@@ -20,55 +20,55 @@ interface CardProps {
 }
 
 export function Card(props: CardProps) {
-  async function alterPassAccount (form: PassOrAccount) {
-    if(form.interf === 'password') {
-      if (form.password === undefined || form.siteName === undefined || form.confPassword === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
+  // async function alterPassAccount (form: PassOrAccount) {
+  //   if(form.interf === 'password') {
+  //     if (form.password === undefined || form.siteName === undefined || form.confPassword === undefined) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("algum dos campos não foi preenchido");
+  //       return
+  //     }
   
-      if(!form.password.match(form.confPassword)) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("senhas não batem");
-        return
-      }
+  //     if(!form.password.match(form.confPassword)) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("senhas não batem");
+  //       return
+  //     }
   
-      const res = await apiPassword.modifyPassword(form);
+  //     const res = await apiPassword.modifyPassword(form);
   
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
+  //     if(res === undefined) {
+  //       console.log("deu caca")
+  //       return
+  //     }
 
 
-      console.log(res)
+  //     console.log(res)
 
-    } else {
-      if (form.password === undefined || form.email === undefined || form.name === undefined || form.confPassword === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
+  //   } else {
+  //     if (form.password === undefined || form.email === undefined || form.name === undefined || form.confPassword === undefined) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("algum dos campos não foi preenchido");
+  //       return
+  //     }
   
-      if(!form.password.match(form.confPassword)) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("senhas não batem");
-        return
-      }
+  //     if(!form.password.match(form.confPassword)) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("senhas não batem");
+  //       return
+  //     }
   
-      const res = await apiAccount.modifyAccountData(form);
+  //     const res = await apiAccount.modifyAccountData(form);
   
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
+  //     if(res === undefined) {
+  //       console.log("deu caca")
+  //       return
+  //     }
 
-      console.log(res)
-    }
+  //     console.log(res)
+  //   }
 
     
-  }
+  // }
 
   return (
     <div className={style.container}>

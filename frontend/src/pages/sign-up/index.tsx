@@ -27,7 +27,7 @@ export default function SignUp() {
         throw new Error("senhas não batem"); 
       }
       
-      await api.createAccount({name: name, password: pass, email: email, phoneNumber: phone, interf:"account"});
+      await api.createAccount({name: name, password: pass, email: email, phoneNumber: phone});
       
       toast.success('Conta criada com sucesso')
       router.push('/login')

@@ -16,7 +16,7 @@ interface Props {
 export default function AdicionarSenha(props: Props) {
   const router = useRouter()
   const isAddMode = !props.password
-  console.log(props.password)
+  console.log(!props.password)
 
   const [website, setWebsite] = useState(props.password?.titulo ?? '');
   const [user, setUser] = useState("");
@@ -82,7 +82,7 @@ export default function AdicionarSenha(props: Props) {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={!!isAddMode}/>
+              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={!isAddMode}/>
               <FullInput inputtitle="Nome do usuário do site (opcional)" value={user} onChange={(e) => setUser(e.target.value)}/>
             </div>
 
