@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { CardPasswords, HeaderDashboard } from "@/components";
@@ -7,46 +7,50 @@ import { toast } from "react-toastify";
 import { Password } from "@/services/endpoints/password";
 import { useRouter } from "next/router";
 
-const api = new Password()
+const api = new Password();
 
 export default function dashboard() {
-  const router = useRouter()
+  const router = useRouter();
 
   const [data, setData] = useState<RIPassword[]>([]);
 
-  async function getAllPasswords () {
+  async function getAllPasswords() {
     try {
       const resp = await api.getPasswords();
       setData(resp);
-    } catch(e: any) {
-      toast.error(e.message)
+    } catch (e: any) {
+      toast.error(e.message);
     }
   }
 
-  const handleRemovePassword = async(id: string) => {
+  const handleRemovePassword = async (id: string) => {
     try {
-      await api.deletePassword(id)
-      await getAllPasswords()
-    } catch(e: any) {
-      toast.error(e.message)
+      await api.deletePassword(id);
+      await getAllPasswords();
+    } catch (e: any) {
+      toast.error(e.message);
     }
-  }
+  };
 
   const handleChangePassword = (id: string) => {
-    router.push(`/alterar-senha/${id}`)
-  }
+    router.push(`/alterar-senha/${id}`);
+  };
 
   useEffect(() => {
-    getAllPasswords()
-  }, [])
+    getAllPasswords();
+  }, []);
 
   return (
-    <div>
+    <div className={style.containerMax}>
       <div className={style.container}>
-        <HeaderDashboard />
-        {data.map((item)=>
-          <CardPasswords passwordInfos={item} onRemove={() => handleRemovePassword(item.idSenha)} onUpdate={() => handleChangePassword(item.idSenha)}/>
-        )}
+        <HeaderDashboard passwords={data.map((x) => x.senha)} />
+        {data.map((item) => (
+          <CardPasswords
+            passwordInfos={item}
+            onRemove={() => handleRemovePassword(item.idSenha)}
+            onUpdate={() => handleChangePassword(item.idSenha)}
+          />
+        ))}
       </div>
     </div>
   );

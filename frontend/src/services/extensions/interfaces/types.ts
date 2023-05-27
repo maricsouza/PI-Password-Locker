@@ -10,8 +10,9 @@ interface RIPassword {
   titulo: string;
   userSite: string;
   senha: string;
-  dataAlteracao: string;
+  dataAlteracao: Array<number>;
   fk_idUser: string;
+  dataCriacao: Array<number>;
 }
 
 interface IAccount {

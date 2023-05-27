@@ -11,9 +11,46 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-interface ContentHeaderDashboard {}
+interface ContentHeaderDashboard {
+  passwords: Array<string>;
+}
 
 export function HeaderDashboard(props: ContentHeaderDashboard) {
+  function getPasswordsQuantity() {
+    return props.passwords.length;
+  }
+
+  function getSecurePasswordsQuantity() {
+    const strongPasswords = [];
+
+    props.passwords.forEach(element => {
+      const securityLevel = passwordSecurityLevel(element);
+
+      if(securityLevel == "strong"){
+        strongPasswords.push(element);
+      }
+    });
+
+    return strongPasswords.length
+  }
+
+  function getNotSecurePasswordsQuantity(){
+    return props.passwords.length - getSecurePasswordsQuantity();
+  }
+
+  function passwordSecurityLevel(password: string) {
+    var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+  
+    if (strongRegex.test(password)) {
+      return "strong";
+    } else if (mediumRegex.test(password)) {
+      return "medium";
+    } else {
+      return "low";
+    }
+  }
+
   return (
     <>
       <div className={style.container}>
@@ -23,7 +60,7 @@ export function HeaderDashboard(props: ContentHeaderDashboard) {
               <ImageLogoVertical />
             </div>
             <div className={style.infoAlert}>
-              <InfoAlert textAlert="Você tem 7 senhas não seguras" />
+              <InfoAlert textAlert={`Você tem ${getNotSecurePasswordsQuantity()} senhas não seguras`} />
             </div>
             <div className={style.userPerfil}>
               <UserPerfil />
@@ -31,17 +68,20 @@ export function HeaderDashboard(props: ContentHeaderDashboard) {
           </div>
           <div className={style.row2}>
             <div className={style.typePassword}>
-              <TypePasword text={"Senhas ao total"} quantify={12} />
-              <TypePasword text={"Fora do padrão"} quantify={7} />
-              <TypePasword text={"Dentro do padrão"} quantify={4} />
+              <TypePasword
+                text={"Senhas ao total"}
+                quantify={getPasswordsQuantity()}
+              />
+              <TypePasword text={"Fora do padrão"} quantify={getNotSecurePasswordsQuantity()} />
+              <TypePasword text={"Dentro do padrão"} quantify={getSecurePasswordsQuantity()} />
             </div>
             <div className={style.btnAdicionar}>
               <Link href={"/adicionar-senha"}>
                 <button>
-                  <Image src={add} alt="Botão adicionar"/>
+                  <Image src={add} alt="Botão adicionar" />
                   Adicionar nova senha
                 </button>
-                </Link>
+              </Link>
             </div>
           </div>
         </div>

@@ -6,39 +6,36 @@ import { Password } from "@/services/endpoints/password";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-const api = new Password()
+const api = new Password();
 
 export default function AlterarSenha() {
   const router = useRouter();
   const [passToEdit, setPassToEdit] = useState<RIPassword>();
 
-  const idToEdit = router.query.id
+  const idToEdit = router.query.id;
 
   useEffect(() => {
-    handleGetPasswordInfos()
-  }, [])
+    handleGetPasswordInfos();
+  }, []);
 
-  const handleGetPasswordInfos = async() => {
+  const handleGetPasswordInfos = async () => {
     if (!idToEdit) {
       return;
     }
 
-    try {      
+    try {
       // TODO:: FALTANDO ROTA PARA PEGAR INFORMAÇÕES DA SENHA A PARTIR DE UM ID
-      const passwords = await api.getPasswords()
-      const pass = passwords.filter((pass) => pass.idSenha === idToEdit[0])[0]
-      console.log(passwords)
-      console.log(idToEdit)
-      setPassToEdit(pass)
-    } catch(e: any) {
-      toast.error(e.message)
+      const passwords = await api.getPasswords();
+      const pass = passwords.filter((pass) => pass.idSenha === idToEdit[0])[0];
+      setPassToEdit(pass);
+    } catch (e: any) {
+      toast.error(e.message);
     }
-  }
+  };
 
   if (passToEdit) {
-    return <AdicionarSenha password={passToEdit}/>
+    return <AdicionarSenha password={passToEdit} />;
   }
-
 
   return (
     <div className={style.container}>
