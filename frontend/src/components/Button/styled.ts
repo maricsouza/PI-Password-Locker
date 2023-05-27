@@ -7,7 +7,7 @@ export const TButton = styled.button<ContentButton>`
   color: ${(props) => props.fontcolor ?? "#fff"};
   background-color: ${(props) => props.backgcolor ?? "#36B236"};
   width: ${(props) => props.size ?? sizes.large};
-  height: 2.6rem;
+  height: 2.7rem;
 
   border: none;
   border-radius: 0.2rem;

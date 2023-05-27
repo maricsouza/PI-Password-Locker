@@ -33,12 +33,13 @@ export function GeneratePassword() {
           readOnly={true}
         />
         <Button
+        className={style.btnGerar}
           backgcolor="#0051D0"
           fontcolor="#FFF"
           typeofbutton="textButton"
           text="Gerar"
-          sizefont=""
-          size={sizes.large}
+          sizefont="16px"
+          size="20em"
           onClick={() => passwordGenerator()}
         />
       </div>

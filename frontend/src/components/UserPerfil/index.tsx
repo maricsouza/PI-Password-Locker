@@ -19,7 +19,7 @@ export function UserPerfil() {
             <Link className={style.linkPerfil} href={"/meus-dados"}>Ver perfil</Link>
           </div>
           <div className={style.imageUser}>
-            <Image src={user} alt={"Imagem de usuario"} />
+            <Image className={style.imgUser} src={user} alt={"Imagem de usuario"} />
           </div>
         </div>
       </div>

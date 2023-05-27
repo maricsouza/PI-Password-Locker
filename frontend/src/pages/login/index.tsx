@@ -16,7 +16,7 @@ export default function Login() {
       <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large} /></Link>
       <text className={style.text}>
         Não tem uma conta?{" "}
-        <Link className={style.linkCadastro} href={"../siginUp"}>
+        <Link className={style.linkCadastro} href={"../sign-up"}>
           {" "}
           Cadastre-se
         </Link>
