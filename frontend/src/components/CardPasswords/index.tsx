@@ -37,6 +37,11 @@ export function CardPasswords(props: CardProps) {
     setIsOpenDelete(!isOpenDelete);
   }
 
+  function deletePassword() {
+    props.onRemove();
+    handleIsOpenDelete();
+  }
+
   return (
     <div className={style.container}>
       <div className={style.row}>
@@ -60,7 +65,10 @@ export function CardPasswords(props: CardProps) {
         <div>
           <div className={style.labelPassword}>Senha</div>
           <div className={style.password}>
-            <ViewPassword isHide={showBalance} value={props.passwordInfos.senha} />
+            <ViewPassword
+              isHide={showBalance}
+              value={props.passwordInfos.senha}
+            />
           </div>
         </div>
 
@@ -139,7 +147,7 @@ export function CardPasswords(props: CardProps) {
             </button>
             <button
               className={style.deleteButton}
-              onClick={() => handleIsOpenDelete()}
+              onClick={() => deletePassword()}
             >
               Excluir senha
             </button>
