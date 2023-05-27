@@ -1,3 +1,5 @@
+'use client';
+
 import { ImageWithLogo, Input, Button } from "@/components";
 import style from "../login/style.module.scss";
 import { useState } from "react";
@@ -5,38 +7,53 @@ import Link from "next/link";
 import { sizes } from "@/styles/global.type";
 import { Account } from "@/services/endpoints/account";
 
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { setCredencials } from "@/redux/slices/userSlice";
+
 const api = new Account()
 
-import PasswordValidator from "@/components/PasswordValidator";
 export default function Login() {
+  const router = useRouter();
+  const dispatch = useDispatch()
 
   const [email, setEmail] = useState("");
   const [password,setPassword] = useState("");
-  // const nav = useNavigate();
 
-  async function login (email: string, password: string) {
-    
-    if(email === undefined) {
-      // TODO :: MODAL/VALIDACAO DE ERRO
-      console.log("deve ser digitado um email")
-      return
+  async function login() {
+    try {
+      const isValid: string[] = []
+
+      if(!email) {
+        isValid.push("E-mail obrigatório")
+      }
+  
+      if (!password) {
+        isValid.push("Senha obrigatória")
+      }
+
+      if (isValid.length > 0) {
+        isValid.forEach((msg) => toast.error(msg))
+        return;
+      }
+
+      const r = await api.login(email, password)
+
+      dispatch(setCredencials({
+        token: r.token, 
+        userId: r.idUser
+      }))
+
+      router.push('/dashboard')
+
+    } catch(e: any) {
+      console.log(e)
+      toast.error(e.message)
     }
+  }
 
-    if (password === undefined) {
-      // TODO :: MODAL/VALIDACAO DE ERRO
-      console.log("deve ser digitada uma senha")
-      return
-    }
-
-    const resp = await api.login({email: email, password: password, interf:"account"});
-
-    if( resp === undefined) {
-      console.log("erro no retorno da requisição")
-      return
-    }
-
-    process.env.NEXTJS_VALID_TOKEN = resp.token;
-    process.env.NEXTJS_USERID = resp.idUser;
+  const a = () => {
 
   }
 
@@ -45,16 +62,11 @@ export default function Login() {
       <ImageWithLogo largura="320px" />
       <Input content={"Email"} value={email} onChange={(e) => setEmail(e.target.value)} />
       <Input content={"Senha"} type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <Link href={"/dashboard"}
-        onClick={() => login(email,password)}
-      > 
-        <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large}  />
-      </Link>
+      <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large}  onClick={login}/>
       
       <text className={style.text}>
         Não tem uma conta?{" "}
-        <Link className={style.linkCadastro} href={"../siginUp"}>
-          {" "}
+        <Link className={style.linkCadastro} href={"sign-up"}>
           Cadastre-se
         </Link>
       </text>

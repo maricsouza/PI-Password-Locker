@@ -3,7 +3,12 @@ import { FullInput, Button } from "@/components";
 import { sizes } from "@/styles/global.type";
 import { useState } from "react";
 
-export function GeneratePassword() {
+interface Props {
+  value: string;
+  onChange: (str: string) => void;
+}
+
+export function GeneratePassword(props: Props) {
   const [password, setPassword] = useState("");
 
   function passwordGenerator() {
@@ -19,6 +24,7 @@ export function GeneratePassword() {
       newPassword += charset[Math.floor(Math.random() * charset.length)];
     }
 
+    props.onChange(newPassword)
     setPassword(newPassword);
   }
 
@@ -28,7 +34,7 @@ export function GeneratePassword() {
       <hr />
       <div className={style.box}>
         <FullInput
-          value={password}
+          value={props.value}
           onChange={() => passwordGenerator()}
           readOnly={true}
         />

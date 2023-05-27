@@ -1,28 +1,32 @@
 interface IPassword {
-  interf: 'password'
   id?: string;
   siteName?: string;
   siteUsername?: string;
   password?: string;
-  confPassword?: string;
 }
 
 interface RIPassword {
-  id: string;
-  siteName?: string;
-  siteUsername?: string;
-  password?: string;
-  lastChange: Date;
+  idSenha: string;
+  titulo: string;
+  userSite: string;
+  senha: string;
+  dataAlteracao: string;
+  fk_idUser: string;
 }
 
 interface IAccount {
-  interf: 'account'
   id?: string;
   name?: string;
   email?: string;
   phoneNumber?: string;
   password?: string;
   confPassword?: string;
+}
+
+interface IRAccount {
+  idUser: string;
+  token: string;
+  validado: boolean
 }
 
 type PassOrAccount = IAccount | IPassword

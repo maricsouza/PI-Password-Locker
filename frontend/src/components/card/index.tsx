@@ -15,148 +15,60 @@ interface CardProps {
   cardFormat: number;
   text: string;
   buttonText: string;
-  action: 'A' | 'M' | 'D'
-  form: PassOrAccount
-  // COMO TIPAR OS DADOS QUE ESTÃO VINDO POR PROPS?
+  onConfirm: () => void;
+  onDelete: () => void;
 }
 
 export function Card(props: CardProps) {
+  // async function alterPassAccount (form: PassOrAccount) {
+  //   if(form.interf === 'password') {
+  //     if (form.password === undefined || form.siteName === undefined || form.confPassword === undefined) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("algum dos campos não foi preenchido");
+  //       return
+  //     }
   
-  async function saveChanges(action: string) {
-    if(action === 'A') {
-      await addPassword(props.form)
-    } else if (action === 'M') {
-      await alterPassAccount(props.form)
-    } else {
-      await deletePassAccount(props.form);
-    }
-  }
-
-  async function addPassword (form: PassOrAccount) {
-    if(form.interf ==="password") {
-      if (form.password === undefined || form.siteName === undefined || form.confPassword === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
+  //     if(!form.password.match(form.confPassword)) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("senhas não batem");
+  //       return
+  //     }
   
-      if(!form.password.match(form.confPassword)) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("senhas não batem");
-        return
-      }
+  //     const res = await apiPassword.modifyPassword(form);
   
-      const res = await apiPassword.savePassword(form);
-  
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
-
-      console.log(res)
-    }
-
-    
-
-  }
-
-  async function deletePassAccount (form: PassOrAccount) {
-    if(form.interf === 'password') {
-      if (form.id === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
-  
-      // if(!form.id.match(form.confPassword)) {
-      //   // TODO :: MENSAGEM DE ERRO
-      //   console.log("senhas não batem");
-      //   return
-      // }
-  
-      const res = await apiPassword.deletePassword(form);
-  
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
-
-      console.log(res)
-
-    } else {
-      if (form.id === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
-  
-      // if(!form.password.match(form.confPassword)) {
-      //   // TODO :: MENSAGEM DE ERRO
-      //   console.log("senhas não batem");
-      //   return
-      // }
-  
-      const res = await apiAccount.deleteAccount(form);
-  
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
-
-      console.log(res)
-
-    }
-  }
-
-  async function alterPassAccount (form: PassOrAccount) {
-    if(form.interf === 'password') {
-      if (form.password === undefined || form.siteName === undefined || form.confPassword === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
-  
-      if(!form.password.match(form.confPassword)) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("senhas não batem");
-        return
-      }
-  
-      const res = await apiPassword.modifyPassword(form);
-  
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
+  //     if(res === undefined) {
+  //       console.log("deu caca")
+  //       return
+  //     }
 
 
-      console.log(res)
+  //     console.log(res)
 
-    } else {
-      if (form.password === undefined || form.email === undefined || form.name === undefined || form.confPassword === undefined) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("algum dos campos não foi preenchido");
-        return
-      }
+  //   } else {
+  //     if (form.password === undefined || form.email === undefined || form.name === undefined || form.confPassword === undefined) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("algum dos campos não foi preenchido");
+  //       return
+  //     }
   
-      if(!form.password.match(form.confPassword)) {
-        // TODO :: MENSAGEM DE ERRO
-        console.log("senhas não batem");
-        return
-      }
+  //     if(!form.password.match(form.confPassword)) {
+  //       // TODO :: MENSAGEM DE ERRO
+  //       console.log("senhas não batem");
+  //       return
+  //     }
   
-      const res = await apiAccount.modifyAccountData(form);
+  //     const res = await apiAccount.modifyAccountData(form);
   
-      if(res === undefined) {
-        console.log("deu caca")
-        return
-      }
+  //     if(res === undefined) {
+  //       console.log("deu caca")
+  //       return
+  //     }
 
-      console.log(res)
-    }
+  //     console.log(res)
+  //   }
 
     
-  }
+  // }
 
   return (
     <div className={style.container}>
@@ -170,7 +82,7 @@ export function Card(props: CardProps) {
             typeofbutton="textButton"
             text={props.buttonText}
             size={sizes.large}
-            onClick={() => saveChanges(props.action)}
+            onClick={props.onConfirm}
           />
           <Button
             backgcolor="#E1E3E5"
@@ -178,7 +90,7 @@ export function Card(props: CardProps) {
             typeofbutton="imageButton"
             imagepath={remove}
             size={sizes.xxxsmall}
-            onClick={() => saveChanges('D')}
+            onClick={props.onDelete}
           />
         </div>
       ) : (
@@ -189,7 +101,7 @@ export function Card(props: CardProps) {
             typeofbutton="textButton"
             text={props.buttonText}
             size={sizes.larger}
-            onClick={() => saveChanges(props.action)}
+            onClick={props.onConfirm}
           />
           <Button
             backgcolor="#FA3F38"
@@ -197,7 +109,7 @@ export function Card(props: CardProps) {
             typeofbutton="textButton"
             text={"Excluir conta"}
             size={sizes.larger}
-            onClick={() => saveChanges('D')}
+            onClick={props.onDelete}
           />
         </div>
       )}
