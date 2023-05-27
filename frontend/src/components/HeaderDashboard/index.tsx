@@ -13,6 +13,7 @@ import Image from "next/image";
 
 interface ContentHeaderDashboard {
   passwords: Array<string>;
+  user: RIAccount | undefined;
 }
 
 export function HeaderDashboard(props: ContentHeaderDashboard) {
@@ -63,7 +64,7 @@ export function HeaderDashboard(props: ContentHeaderDashboard) {
               <InfoAlert textAlert={`Você tem ${getNotSecurePasswordsQuantity()} senhas não seguras`} />
             </div>
             <div className={style.userPerfil}>
-              <UserPerfil />
+              <UserPerfil user={props.user}/>
             </div>
           </div>
           <div className={style.row2}>

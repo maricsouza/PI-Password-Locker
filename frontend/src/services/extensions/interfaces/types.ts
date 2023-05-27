@@ -24,6 +24,17 @@ interface IAccount {
   confPassword?: string;
 }
 
+interface RIAccount {
+  dataAlteracao?: Array<number>;
+  dataCriacao: Array<number>;
+  email: string;
+  id: string;
+  key: string;
+  nome: string;
+  senha: string;
+  telefone: string
+}
+
 interface IRAccount {
   idUser: string;
   token: string;
@@ -42,4 +53,3 @@ interface IError {
   status: number,
   message: string
 }
-
