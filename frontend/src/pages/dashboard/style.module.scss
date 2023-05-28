@@ -1,8 +1,10 @@
 .container{
     position: relative;
+    background-color: #e8e5e5;
+    height: fit-content;
 }
 
 .containerMax{
     background-color: #e8e5e5;
-    height: max(fit-content, 100vh);
+    height: 100vh;
 }
