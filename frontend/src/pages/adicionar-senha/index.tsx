@@ -73,7 +73,7 @@ export default function AdicionarSenha(props: Props) {
 
   return (
     <div className={style.container}>
-      <Header title={isAddMode ? 'Adicionar Senha' : 'Alterar Senha'} returnPage="/dashboard" />
+      <Header title={'Adicionar Senha'} returnPage="/dashboard" />
       <div className={style.principalBox}>
         <div className={style.infoContainer}>
           <div>
@@ -81,7 +81,7 @@ export default function AdicionarSenha(props: Props) {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={!isAddMode}/>
+              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={false}/>
               <FullInput inputtitle="Nome do usuário do site (opcional)" value={user} onChange={(e) => setUser(e.target.value)}/>
             </div>
 
@@ -96,8 +96,8 @@ export default function AdicionarSenha(props: Props) {
         <Card
           cardFormat={1}
           text="Preencha os dados ao lado para criar senha."
-          buttonText={isAddMode ? 'Adicionar' : 'Alterar'}
-          onConfirm={isAddMode ? handleSavePassword : handleEditPassword}
+          buttonText={'Adicionar'}
+          onConfirm={handleSavePassword}
           onDelete={() => undefined}
         />
       </div>
