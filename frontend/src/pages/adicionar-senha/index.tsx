@@ -14,8 +14,9 @@ interface Props {
 }
 
 export default function AdicionarSenha(props: Props) {
-  const router = useRouter();
-  const isAddMode = !props.password;
+
+  const router = useRouter()
+  const isAddMode = !props.password
 
   const [website, setWebsite] = useState(props.password?.titulo ?? "");
   const [user, setUser] = useState("");

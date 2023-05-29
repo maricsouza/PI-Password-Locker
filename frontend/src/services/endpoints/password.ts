@@ -7,6 +7,16 @@ export class Password {
     return r.data;
   }
 
+  async getPasswordById (id: string) {
+    const r = await api.get<RIPassword>(`/senhas/senha`,{
+      headers: {
+        idSenha: id
+      }
+    })
+
+    return r.data;
+  }
+
   // ENDPOINT :: SALVAR SENHA => nomeSite, usuSite, senha
   async addPassword(data: IPassword) {
     const r = await api.post("/senhas", {
