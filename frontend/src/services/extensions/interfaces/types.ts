@@ -10,8 +10,9 @@ interface RIPassword {
   titulo: string;
   userSite: string;
   senha: string;
-  dataAlteracao: string;
+  dataAlteracao: Array<number>;
   fk_idUser: string;
+  dataCriacao: Array<number>;
 }
 
 interface IAccount {
@@ -21,6 +22,17 @@ interface IAccount {
   phoneNumber?: string;
   password?: string;
   confPassword?: string;
+}
+
+interface RIAccount {
+  dataAlteracao?: Array<number>;
+  dataCriacao: Array<number>;
+  email: string;
+  id: string;
+  key: string;
+  nome: string;
+  senha: string;
+  telefone: string
 }
 
 interface IRAccount {
@@ -41,4 +53,3 @@ interface IError {
   status: number,
   message: string
 }
-
