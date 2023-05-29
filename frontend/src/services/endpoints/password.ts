@@ -18,38 +18,42 @@ export class Password {
   }
 
   // ENDPOINT :: SALVAR SENHA => nomeSite, usuSite, senha
-  async savePassword(data: IPassword) {
+  async addPassword(data: IPassword) {
     const r = await api.post("/senhas", {
       titulo: data.siteName,
       senha: data.password,
-      usuarioSite: data.siteUsername
-    })
+      usuarioSite: data.siteUsername,
+    });
 
     return r.data;
   }
 
   // ENDPOINT :: SALVAR SENHA => id, nomeSite, usuSite, senha
   async modifyPassword(changedData: IPassword) {
-    const r = await api.put("/senhas", {
-      titulo: changedData.siteName,
-      senha: changedData.password,
-      usuarioSite: changedData.siteUsername,
-      fk_idUser: ''
-    }, {
-      headers: {
-        idSenha: changedData.id
+    const r = await api.put(
+      "/senhas",
+      {
+        titulo: changedData.siteName,
+        senha: changedData.password,
+        usuarioSite: changedData.siteUsername,
+        fk_idUser: "",
+      },
+      {
+        headers: {
+          idSenha: changedData.id,
+        },
       }
-    });
+    );
 
     return r.data;
   }
 
-  async deletePassword (id: string) {
+  async deletePassword(id: string) {
     const r = await api.delete("/senhas", {
       headers: {
-        idSenha: id
-      }
-    })
-    return r.data
+        idSenha: id,
+      },
+    });
+    return r.data;
   }
 }

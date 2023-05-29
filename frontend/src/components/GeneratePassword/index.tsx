@@ -1,6 +1,5 @@
 import style from "./style.module.scss";
 import { FullInput, Button } from "@/components";
-import { sizes } from "@/styles/global.type";
 import { useState } from "react";
 
 interface Props {
@@ -12,20 +11,32 @@ export function GeneratePassword(props: Props) {
   const [password, setPassword] = useState("");
 
   function passwordGenerator() {
-    const length = 16;
-    let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbers = "0123456789";
-    const symbols = "!@#$%&*()_+?{}[]^~:;<>";
-    charset += numbers;
-    charset += symbols;
-
-    let newPassword = "";
-    for (let i = 0; i < length; i++) {
-      newPassword += charset[Math.floor(Math.random() * charset.length)];
+    var lowercase = "abcdefghijklmnopqrstuvwxyz";
+    var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var digits = "0123456789";
+    var specialChars = "@$!%*?&";
+    var passwordLength = 12;
+    var newPassword = "";
+  
+    newPassword += getRandomCharacter(lowercase);
+    newPassword += getRandomCharacter(uppercase);
+    newPassword += getRandomCharacter(digits);
+    newPassword += getRandomCharacter(specialChars);
+  
+    var remainingLength = passwordLength - 4;
+    var allCharacters = lowercase + uppercase + digits + specialChars;
+  
+    for (var i = 0; i < remainingLength; i++) {
+      newPassword += getRandomCharacter(allCharacters);
     }
-
+  
     props.onChange(newPassword)
     setPassword(newPassword);
+  }
+
+  function getRandomCharacter(characters: string) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    return characters.charAt(randomIndex);
   }
 
   return (

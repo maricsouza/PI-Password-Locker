@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ImageWithLogo, Input, Button } from "@/components";
 import style from "../login/style.module.scss";
@@ -12,58 +12,70 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { setCredencials } from "@/redux/slices/userSlice";
 
-const api = new Account()
+const api = new Account();
 
 export default function Login() {
   const router = useRouter();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
-  const [password,setPassword] = useState("");
+  const [password, setPassword] = useState("");
 
   async function login() {
     try {
-      const isValid: string[] = []
+      const isValid: string[] = [];
 
-      if(!email) {
-        isValid.push("E-mail obrigatório")
+      if (!email) {
+        isValid.push("E-mail obrigatório");
       }
-  
+
       if (!password) {
-        isValid.push("Senha obrigatória")
+        isValid.push("Senha obrigatória");
       }
 
       if (isValid.length > 0) {
-        isValid.forEach((msg) => toast.error(msg))
+        isValid.forEach((msg) => toast.error(msg));
         return;
       }
 
-      const r = await api.login(email, password)
+      const r = await api.login(email, password);
 
-      dispatch(setCredencials({
-        token: r.token, 
-        userId: r.idUser
-      }))
+      dispatch(
+        setCredencials({
+          token: r.token,
+          userId: r.idUser,
+        })
+      );
 
-      router.push('/dashboard')
-
-    } catch(e: any) {
-      console.log(e)
-      toast.error(e.message)
+      router.push("/dashboard");
+    } catch (e: any) {
+      toast.error(e.message);
     }
   }
 
-  const a = () => {
-
-  }
+  const a = () => {};
 
   return (
     <div className={style.container}>
       <ImageWithLogo largura="320px" />
-      <Input content={"Email"} value={email} onChange={(e) => setEmail(e.target.value)} />
-      <Input content={"Senha"} type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <Button text={"Entrar"} typeofbutton="textButton" size={sizes.large}  onClick={login}/>
-      
+      <Input
+        content={"Email"}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <Input
+        content={"Senha"}
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <Button
+        text={"Entrar"}
+        typeofbutton="textButton"
+        size={sizes.large}
+        onClick={login}
+      />
+
       <text className={style.text}>
         Não tem uma conta?{" "}
         <Link className={style.linkCadastro} href={"../sign-up"}>
