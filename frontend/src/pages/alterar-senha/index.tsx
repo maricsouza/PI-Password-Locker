@@ -1,6 +1,6 @@
 import { Header, FullInput, Card, GeneratePassword } from "@/components";
 import style from "./style.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Password } from "@/services/endpoints/password";
 import { toast } from "react-toastify"
 import { useRouter } from "next/router";
@@ -13,11 +13,33 @@ interface Props {
 
 export default function AlterarSenha(props: Props) {
     const router = useRouter()
+    
+    const idEditMode = router.query.id;
+    
+    const [website, setWebsite] = useState('');
+    const [user, setUser] = useState('');
+    const [password,setPassword] = useState('');
+    const [confirmedPassword,setConfirmedPassword] = useState('');
+   
+    const handleGetPasswordInfos = async() => {
+      if(idEditMode === undefined) {
+        return router.back();
+      }
+  
+      try {      
+        // TODO:: FALTANDO ROTA PARA PEGAR INFORMAÇÕES DA SENHA A PARTIR DE UM ID
+        const password = await api.getPasswordById(idEditMode.toString());
 
-    const [website, setWebsite] = useState(props.password?.titulo ?? '');
-    const [user, setUser] = useState("");
-    const [password,setPassword] = useState(props.password?.senha ?? '');
-    const [confirmedPassword,setConfirmedPassword] = useState(props.password?.senha ?? '');
+        console.log(password);
+  
+        setWebsite(password.titulo)
+        setPassword(password.senha)
+        setUser(password.userSite)
+
+      } catch(e: any) {
+        toast.error(e.message)
+      }
+    }
     const [strongPassword, setStrongPassword] = useState('')
 
     const handleEditPassword = async() => {
@@ -26,15 +48,17 @@ export default function AlterarSenha(props: Props) {
             siteName: website,
             siteUsername: user,
             password: validatePassword(),
-            id: props.password?.idSenha
+            id: idEditMode?.toString()
           })
     
-          toast.success('Senha alterada')
-          router.back()
+          toast.success('Senha alterada');
+          router.back();
+
         } catch(e: any) {
             toast.error(e.message)
         }
       }
+
     
       const validatePassword = () => {
         let senha = ''
@@ -53,6 +77,10 @@ export default function AlterarSenha(props: Props) {
         return senha
       }
 
+      useEffect(() => {
+        handleGetPasswordInfos()
+      }, [])
+
 
   return (
     <div className={style.container}>
@@ -65,7 +93,7 @@ export default function AlterarSenha(props: Props) {
             <hr />
 
             <div className={style.box}>
-              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={false}/>
+              <FullInput inputtitle="Nome do site" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={true}/>
               <FullInput inputtitle="Nome do usuário do site (opcional)" value={user} onChange={(e) => setUser(e.target.value)}/>
             </div>
 

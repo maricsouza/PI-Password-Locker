@@ -2,10 +2,10 @@
 
 import { Header, FullInput, Card, GeneratePassword } from "@/components";
 import style from "./style.module.scss";
-import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { Password } from "@/services/endpoints/password";
+import { useState } from "react";
 
 const api = new Password();
 
@@ -18,12 +18,10 @@ export default function AdicionarSenha(props: Props) {
   const router = useRouter()
   const isAddMode = !props.password
 
-  const [website, setWebsite] = useState(props.password?.titulo ?? "");
+  const [website, setWebsite] = useState("");
   const [user, setUser] = useState("");
-  const [password, setPassword] = useState(props.password?.senha ?? "");
-  const [confirmedPassword, setConfirmedPassword] = useState(
-    props.password?.senha ?? ""
-  );
+  const [password, setPassword] = useState("");
+  const [confirmedPassword, setConfirmedPassword] = useState("");
   const [strongPassword, setStrongPassword] = useState("");
 
   const handleSavePassword = async () => {
@@ -41,22 +39,6 @@ export default function AdicionarSenha(props: Props) {
     }
   };
 
-  const handleEditPassword = async () => {
-    try {
-      await api.modifyPassword({
-        siteName: website,
-        siteUsername: user,
-        password: validatePassword(),
-        id: props.password?.idSenha,
-      });
-
-      toast.success("Senha alterada");
-      router.back();
-    } catch (e: any) {
-      toast.error(e.message);
-    }
-  };
-
   const validatePassword = () => {    
     if (!password || !website) {
       throw new Error("Estão faltando campos");
@@ -65,13 +47,16 @@ export default function AdicionarSenha(props: Props) {
     if (password !== confirmedPassword) {
       throw new Error("As senhas devem ser iguais");
     }
-    
+
     return password;
   };
 
   return (
     <div className={style.container}>
-      <Header title={'Adicionar Senha'} returnPage="/dashboard" />
+      <Header
+        title={"Adicionar Senha" }
+        returnPage="/dashboard"
+      />
       <div className={style.principalBox}>
         <div className={style.infoContainer}>
           <div>
@@ -114,7 +99,7 @@ export default function AdicionarSenha(props: Props) {
         <Card
           cardFormat={1}
           text="Preencha os dados ao lado para criar senha."
-          buttonText={'Adicionar'}
+          buttonText={"Adicionar" }
           onConfirm={handleSavePassword}
           onDelete={() => undefined}
         />

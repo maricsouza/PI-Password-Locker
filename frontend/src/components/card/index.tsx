@@ -2,7 +2,7 @@ import { sizes } from "@/styles/global.type";
 import style from "./style.module.scss";
 import remove from "../../../public/img/trash.svg";
 import Image from "next/image";
-import user from "../../../public/img/user.png";
+import user from "../../../public/img/rick.jpg";
 import { Button } from "@/components";
 import { Password } from "@/services/endpoints/password";
 import { Account } from "@/services/endpoints/account";
@@ -23,7 +23,7 @@ export function Card(props: CardProps) {
 
   return (
     <div className={style.container}>
-      <Image style={{width:"130px", height:"100px"}} alt="Usuario" src={user} />
+      <Image style={{width:"130px", height:"100px", borderRadius:"500px"}} alt="Usuario" src={user} />
       <p> {props.text} </p>
       {props.cardFormat == 1 ? (
         <div className={style.buttonBox}>

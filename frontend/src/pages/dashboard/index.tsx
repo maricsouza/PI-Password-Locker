@@ -17,6 +17,8 @@ export default function dashboard() {
   const [data, setData] = useState<RIPassword[]>([]);
   const [user, setUser] = useState<RIAccount>();
 
+
+  
   async function getAllPasswords() {
     try {
       const resp = await apiPasswords.getPasswords();
@@ -28,7 +30,7 @@ export default function dashboard() {
 
   async function getUser() {
     try {
-      const resp = await apiAccount.getAccountById();
+      const resp:RIAccount = await apiAccount.getAccountById();
       setUser(resp);
     } catch (e: any) {
       toast.error("deu erro pra pegar o user");
@@ -45,7 +47,14 @@ export default function dashboard() {
   };
 
   const handleChangePassword = (id: string) => {
-    router.push(`/alterar-senha/${id}`);
+    
+    router.push({
+      pathname: '/alterar-senha',
+      query: {
+        id: id
+      },
+
+    })
   };
 
   useEffect(() => {
