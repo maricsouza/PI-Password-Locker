@@ -5,10 +5,10 @@ interface FullInputProps {
 }
 
 export const InputType = styled.input<FullInputProps>`
-  font-size: 2em;
+  font-size: 1rem;
   padding: 0em 1.5em;
-  width: ${(props) => (props.fullInput ? "300px" : "440px")};
-  height: 7vh;
+  width: ${(props) => (props.fullInput ? "40em" : "18em")};
+  height: 6vh;
   outline: none;
   box-shadow: none;
   border-color: transparent;

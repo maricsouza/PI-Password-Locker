@@ -55,8 +55,8 @@ export function GeneratePassword(props: Props) {
           fontcolor="#FFF"
           typeofbutton="textButton"
           text="Gerar"
-          sizefont="16px"
-          size="20em"
+          sizefont="14px"
+          size="14em"
           onClick={() => passwordGenerator()}
         />
       </div>
