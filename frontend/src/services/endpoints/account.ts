@@ -47,4 +47,9 @@ export class Account {
 
     return response.data;
   }
+
+  async getAccountById() {
+    const response = await api.get("/usuarios/userid");
+    return response.data;
+  }
 }

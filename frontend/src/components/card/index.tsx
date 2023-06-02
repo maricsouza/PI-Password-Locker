@@ -2,7 +2,7 @@ import { sizes } from "@/styles/global.type";
 import style from "./style.module.scss";
 import remove from "../../../public/img/trash.svg";
 import Image from "next/image";
-import user from "../../../public/img/user.png";
+import user from "../../../public/img/rick.jpg";
 import { Button } from "@/components";
 import { Password } from "@/services/endpoints/password";
 import { Account } from "@/services/endpoints/account";
@@ -20,59 +20,10 @@ interface CardProps {
 }
 
 export function Card(props: CardProps) {
-  // async function alterPassAccount (form: PassOrAccount) {
-  //   if(form.interf === 'password') {
-  //     if (form.password === undefined || form.siteName === undefined || form.confPassword === undefined) {
-  //       // TODO :: MENSAGEM DE ERRO
-  //       console.log("algum dos campos não foi preenchido");
-  //       return
-  //     }
-  
-  //     if(!form.password.match(form.confPassword)) {
-  //       // TODO :: MENSAGEM DE ERRO
-  //       console.log("senhas não batem");
-  //       return
-  //     }
-  
-  //     const res = await apiPassword.modifyPassword(form);
-  
-  //     if(res === undefined) {
-  //       console.log("deu caca")
-  //       return
-  //     }
-
-
-  //     console.log(res)
-
-  //   } else {
-  //     if (form.password === undefined || form.email === undefined || form.name === undefined || form.confPassword === undefined) {
-  //       // TODO :: MENSAGEM DE ERRO
-  //       console.log("algum dos campos não foi preenchido");
-  //       return
-  //     }
-  
-  //     if(!form.password.match(form.confPassword)) {
-  //       // TODO :: MENSAGEM DE ERRO
-  //       console.log("senhas não batem");
-  //       return
-  //     }
-  
-  //     const res = await apiAccount.modifyAccountData(form);
-  
-  //     if(res === undefined) {
-  //       console.log("deu caca")
-  //       return
-  //     }
-
-  //     console.log(res)
-  //   }
-
-    
-  // }
 
   return (
     <div className={style.container}>
-      <Image style={{width:"130px", height:"100px"}} alt="Usuario" src={user} />
+      <Image style={{width:"130px", height:"100px", borderRadius:"500px"}} alt="Usuario" src={user} />
       <p> {props.text} </p>
       {props.cardFormat == 1 ? (
         <div className={style.buttonBox}>

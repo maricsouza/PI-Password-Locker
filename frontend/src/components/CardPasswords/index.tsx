@@ -5,36 +5,41 @@ import viewClose from "../../../public/img/viewClose.svg";
 import edit from "../../../public/img/edit.svg";
 import remove from "../../../public/img/trash.svg";
 import { sizes } from "@/styles/global.type";
-import { Password } from "@/services/endpoints/password";
-import { toast } from "react-toastify";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ReactModal from 'react-modal'
+import ReactModal from "react-modal";
 
 interface CardProps {
-  passwordInfos: RIPassword,
+  passwordInfos: RIPassword;
   onRemove: () => void;
   onUpdate: () => void;
 }
-
-const api = new Password()
 
 export function CardPasswords(props: CardProps) {
   const [isOpenDelete, setIsOpenDelete] = useState(false);
   const [showBalance, setShowBalance] = useState<boolean>(true);
 
+  const date =
+    props.passwordInfos.dataAlteracao?.toString() == null
+      ? formatDate(props.passwordInfos.dataCriacao)
+      : formatDate(props.passwordInfos.dataAlteracao);
 
-  const toggleBalance= () => {
-    setShowBalance(!showBalance);
+  function formatDate(date: Array<number>) {
+    return `${date[2]}/${date[1]}/${date[0]}`;
   }
+
+  const toggleBalance = () => {
+    setShowBalance(!showBalance);
+  };
 
   function handleIsOpenDelete() {
     setIsOpenDelete(!isOpenDelete);
   }
-  
-  function notify(mensagem: String) {
-    toast.success(mensagem);
+
+  function deletePassword() {
+    props.onRemove();
+    handleIsOpenDelete();
   }
 
   return (
@@ -48,23 +53,23 @@ export function CardPasswords(props: CardProps) {
             width: "200px",
           }}
         >
-          <div className={style.number}>{props.passwordInfos.idSenha}</div>
+          <div className={style.number}>{1}</div>
           <div className={style.siteName}>{props.passwordInfos.titulo}</div>
         </div>
         <div className=""></div>
         <div className={style.ultimaAlter}>
           <div className={style.labelPassword}>Ultima alteração</div>
-          {props.passwordInfos.dataAlteracao}
+          {date}
         </div>
 
         <div>
-        <div className={style.labelPassword}>Senha</div>
+          <div className={style.labelPassword}>Senha</div>
           <div className={style.password}>
             <ViewPassword
-            isHide={showBalance}
-            value={"15645cdvs"}
+              isHide={showBalance}
+              value={props.passwordInfos.senha}
             />
-        </div>
+          </div>
         </div>
 
         <div className={style.buttons}>
@@ -90,14 +95,14 @@ export function CardPasswords(props: CardProps) {
           </div>
           <div className={style.buttonEdit}>
             <Link href={"/alterar-senha"}>
-            <Button
-              backgcolor="#E1E3E5"
-              fontcolor="#FFF"
-              typeofbutton="imageButton"
-              imagepath={edit}
-              size={sizes.xxxsmall}
-              onClick={props.onUpdate}
-            />
+              <Button
+                backgcolor="#E1E3E5"
+                fontcolor="#FFF"
+                typeofbutton="imageButton"
+                imagepath={edit}
+                size={sizes.xxxsmall}
+                onClick={props.onUpdate}
+              />
             </Link>
           </div>
         </div>
@@ -142,7 +147,7 @@ export function CardPasswords(props: CardProps) {
             </button>
             <button
               className={style.deleteButton}
-              onClick={() => handleIsOpenDelete()}
+              onClick={() => deletePassword()}
             >
               Excluir senha
             </button>
