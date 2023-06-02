@@ -25,6 +25,7 @@ export default function AdicionarSenha(props: Props) {
   const [strongPassword, setStrongPassword] = useState("");
 
   const handleSavePassword = async () => {
+
     try {
       await api.addPassword({
         siteName: website,

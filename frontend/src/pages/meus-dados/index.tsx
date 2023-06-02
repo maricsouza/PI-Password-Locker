@@ -29,6 +29,17 @@ export default function MeusDados() {
     }
   }
 
+  const handleRemovePassword = async () => {
+    try {
+      await api.deleteAccount();
+      toast.success('Conta deletada com sucesso!');
+      router.push('/login');
+
+    } catch (e: any) {
+      toast.error(e.message);
+    }
+  };
+
   async function handleSaveUserChanges () {
     try {
 
@@ -89,7 +100,7 @@ export default function MeusDados() {
           cardFormat={2}
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
-          onDelete={() => undefined}
+          onDelete={() => handleRemovePassword()}
           onConfirm={() => handleSaveUserChanges()}
         />
       </div>

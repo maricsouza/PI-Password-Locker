@@ -38,12 +38,8 @@ export class Account {
     return response.data;
   }
 
-  async deleteAccount(data: IAccount) {
-    const response = await api.delete("/usuarios/", {
-      headers: {
-        idUser: data.id,
-      },
-    });
+  async deleteAccount() {
+    const response = await api.delete("/usuarios/");
 
     return response.data;
   }
