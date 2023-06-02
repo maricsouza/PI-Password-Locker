@@ -8,7 +8,7 @@ export class Password {
   }
 
   async getPasswordById (id: string) {
-    console.log(id);
+
     const r = await api.get<RIPassword>(`/senhas/senha`,{
       headers: {
         idSenha: id
@@ -20,7 +20,7 @@ export class Password {
 
   // ENDPOINT :: SALVAR SENHA => nomeSite, usuSite, senha
   async addPassword(data: IPassword) {
-    console.log(data);
+
     const r = await api.post("/senhas", {
       titulo: data.siteName,
       senha: data.password,
@@ -32,7 +32,7 @@ export class Password {
 
   // ENDPOINT :: SALVAR SENHA => id, nomeSite, usuSite, senha
   async modifyPassword(changedData: IPassword) {
-    console.log(changedData)
+
 
     const r = await api.put(
       "/senhas",

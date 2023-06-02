@@ -31,7 +31,6 @@ export default function AlterarSenha(props: Props) {
 
         const idEditMode = router.query.id;
 
-        console.log(`quando entro? ${idEditMode}`);
 
         if(idEditMode === undefined) {
           toast.error('Não foi possível validar a edição dessa senha.');
@@ -103,7 +102,7 @@ export default function AlterarSenha(props: Props) {
 
       useEffect( () => {
            if(router.isReady) {
-            console.log(router.query, router.isReady);
+            (router.query, router.isReady);
             handleGetPasswordInfos();
            }
       }, [])
