@@ -15,22 +15,26 @@ export default function AlterarSenha(props: Props) {
     const router = useRouter()
     
     const idEditMode = router.query.id;
+    console.log(idEditMode);
     
     const [website, setWebsite] = useState('');
     const [user, setUser] = useState('');
     const [password,setPassword] = useState('');
     const [confirmedPassword,setConfirmedPassword] = useState('');
+    const [strongPassword, setStrongPassword] = useState('')
    
     const handleGetPasswordInfos = async() => {
-      if(idEditMode === undefined) {
-        return router.back();
-      }
-  
-      try {      
+      try {
+
+        console.log(`quando entro? ${idEditMode}`);
+
+        if(idEditMode === undefined) {
+          toast.error('Não foi possível validar a edição dessa senha.');
+          return router.back();
+        }
+
         // TODO:: FALTANDO ROTA PARA PEGAR INFORMAÇÕES DA SENHA A PARTIR DE UM ID
         const password = await api.getPasswordById(idEditMode.toString());
-
-        console.log(password);
   
         setWebsite(password.titulo)
         setPassword(password.senha)
@@ -40,7 +44,7 @@ export default function AlterarSenha(props: Props) {
         toast.error(e.message)
       }
     }
-    const [strongPassword, setStrongPassword] = useState('')
+    
 
     const handleEditPassword = async() => {
         try {
@@ -48,12 +52,12 @@ export default function AlterarSenha(props: Props) {
             siteName: website,
             siteUsername: user,
             password: validatePassword(),
-            id: idEditMode?.toString()
-          })
+            id: idEditMode?.toString(),
+          });
     
+          router.push('/dashboard');
           toast.success('Senha alterada');
-          router.back();
-
+          
         } catch(e: any) {
             toast.error(e.message)
         }
@@ -77,9 +81,13 @@ export default function AlterarSenha(props: Props) {
         return senha
       }
 
-      useEffect(() => {
-        handleGetPasswordInfos()
-      }, [])
+      useEffect( () => {
+
+        if(router.isReady) {
+           handleGetPasswordInfos();
+        }
+
+      }, [router.isReady])
 
 
   return (

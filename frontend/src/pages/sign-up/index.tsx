@@ -29,8 +29,8 @@ export default function SignUp() {
         throw new Error("Todos os campos precisam ser preenchidos");
       }
 
-      if (!pass.match(confirmPass)) {
-        throw new Error("senhas não batem");
+      if (!(pass === confirmPass)) {
+        throw new Error("Senhas não batem");
       }
 
       await api.createAccount({
@@ -42,6 +42,7 @@ export default function SignUp() {
 
       toast.success("Conta criada com sucesso");
       router.push("/login");
+      
     } catch (e: any) {
       toast.error("Ocorreu um erro ao cadastrar sua conta");
     }
