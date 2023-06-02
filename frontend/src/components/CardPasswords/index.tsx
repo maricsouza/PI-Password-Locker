@@ -94,7 +94,6 @@ export function CardPasswords(props: CardProps) {
             />
           </div>
           <div className={style.buttonEdit}>
-            <Link href={"/alterar-senha"}>
               <Button
                 backgcolor="#E1E3E5"
                 fontcolor="#FFF"
@@ -103,7 +102,6 @@ export function CardPasswords(props: CardProps) {
                 size={sizes.xxxsmall}
                 onClick={props.onUpdate}
               />
-            </Link>
           </div>
         </div>
       </div>

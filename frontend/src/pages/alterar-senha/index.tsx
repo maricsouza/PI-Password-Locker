@@ -1,9 +1,12 @@
+"use client"
+
 import { Header, FullInput, Card, GeneratePassword } from "@/components";
 import style from "./style.module.scss";
 import { useEffect, useState } from "react";
 import { Password } from "@/services/endpoints/password";
 import { toast } from "react-toastify"
 import { useRouter } from "next/router";
+import { useSearchParams } from 'next/navigation'
 
 const api = new Password()
 
@@ -13,10 +16,10 @@ interface Props {
 
 export default function AlterarSenha(props: Props) {
     const router = useRouter()
+    const params = useSearchParams();
+
     
-    const idEditMode = router.query.id;
-    console.log(idEditMode);
-    
+    const [passw, setPassw] = useState<RIPassword>();
     const [website, setWebsite] = useState('');
     const [user, setUser] = useState('');
     const [password,setPassword] = useState('');
@@ -26,16 +29,20 @@ export default function AlterarSenha(props: Props) {
     const handleGetPasswordInfos = async() => {
       try {
 
+        const idEditMode = router.query.id;
+
         console.log(`quando entro? ${idEditMode}`);
 
         if(idEditMode === undefined) {
           toast.error('Não foi possível validar a edição dessa senha.');
-          return router.back();
+          // return router.back();
+          return;
         }
 
         // TODO:: FALTANDO ROTA PARA PEGAR INFORMAÇÕES DA SENHA A PARTIR DE UM ID
         const password = await api.getPasswordById(idEditMode.toString());
   
+        setPassw(password);
         setWebsite(password.titulo)
         setPassword(password.senha)
         setUser(password.userSite)
@@ -47,22 +54,35 @@ export default function AlterarSenha(props: Props) {
     
 
     const handleEditPassword = async() => {
+
+        
         try {
           await api.modifyPassword({
             siteName: website,
             siteUsername: user,
-            password: validatePassword(),
-            id: idEditMode?.toString(),
+            password: passw?.senha !== password ? validatePassword() : passw.senha,
+            id: passw?.idSenha,
           });
     
-          router.push('/dashboard');
           toast.success('Senha alterada');
+          router.back();
           
         } catch(e: any) {
             toast.error(e.message)
         }
       }
 
+
+      const handleRemovePassword = async (id: string) => {
+        try {
+          await api.deletePassword(id);
+          toast.success('Senha excluída com sucesso!');
+          router.push('/dashboard');
+    
+        } catch (e: any) {
+          toast.error(e.message);
+        }
+      };
     
       const validatePassword = () => {
         let senha = ''
@@ -82,12 +102,11 @@ export default function AlterarSenha(props: Props) {
       }
 
       useEffect( () => {
-
-        if(router.isReady) {
-           handleGetPasswordInfos();
-        }
-
-      }, [router.isReady])
+           if(router.isReady) {
+            console.log(router.query, router.isReady);
+            handleGetPasswordInfos();
+           }
+      }, [])
 
 
   return (
@@ -118,7 +137,7 @@ export default function AlterarSenha(props: Props) {
           text="Preencha os dados ao lado para alterar senha."
           buttonText="Salvar"
           onConfirm={() => handleEditPassword()}
-          onDelete={() => console.log()}
+          onDelete={() => handleRemovePassword(passw?.idSenha ?? '')}
         />
       </div>
     </div>

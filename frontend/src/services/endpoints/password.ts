@@ -20,10 +20,11 @@ export class Password {
 
   // ENDPOINT :: SALVAR SENHA => nomeSite, usuSite, senha
   async addPassword(data: IPassword) {
+    console.log(data);
     const r = await api.post("/senhas", {
       titulo: data.siteName,
       senha: data.password,
-      usuarioSite: data.siteUsername,
+      userSite: data.siteUsername,
     });
 
     return r.data;
@@ -38,7 +39,7 @@ export class Password {
       {
         titulo: changedData.siteName,
         senha: changedData.password,
-        usuarioSite: changedData.siteUsername,
+        userSite: changedData.siteUsername,
       },
       {
         headers: {
