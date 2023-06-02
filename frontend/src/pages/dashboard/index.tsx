@@ -33,7 +33,7 @@ export default function dashboard() {
       const resp:RIAccount = await apiAccount.getAccountById();
       setUser(resp);
     } catch (e: any) {
-      toast.error("deu erro pra pegar o user");
+      toast.error("Ocorreu um erro pra pegar o user");
     }
   }
 
@@ -41,23 +41,29 @@ export default function dashboard() {
     try {
       await apiPasswords.deletePassword(id);
       await getAllPasswords();
+
     } catch (e: any) {
       toast.error(e.message);
     }
   };
 
   const handleChangePassword = (id: string) => {
+
+    if(id === undefined) {
+      return;
+    }
+
+    console.log(id);
     
     router.push({
       pathname: '/alterar-senha',
-      query: {
-        id: id
-      },
+      
 
-    })
+    });
   };
 
   useEffect(() => {
+
     getAllPasswords();
     getUser();
   }, []);

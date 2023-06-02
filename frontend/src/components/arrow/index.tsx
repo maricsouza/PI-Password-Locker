@@ -4,14 +4,14 @@ import style from "../arrow/style.module.scss";
 import arrow from "../../../public/img/arrow.svg";
 
 interface ArrowProps {
-  returningPage: string;
+  returningPage?: string;
 }
 
 export function Arrow(props: ArrowProps) {
   return (
     <div className={style.arrow}>
-      <Link href={props.returningPage}>
-        <Image src={arrow} alt="Voltar" width={28} height={0} />
+      <Link href={props.returningPage ?? '/dashboard'}>
+        <Image src={arrow} alt="Voltar" width={30} height={0} />
       </Link>
     </div>
   );
