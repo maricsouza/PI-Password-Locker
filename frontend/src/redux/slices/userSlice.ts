@@ -10,7 +10,6 @@ interface userState {
 }
 
 const cookies = parseCookies();
-console.log(cookies)
 
 const initialState: userState = {
   token: cookies[TOKEN] ?? "",

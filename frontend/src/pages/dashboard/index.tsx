@@ -8,10 +8,13 @@ import { Password } from "@/services/endpoints/password";
 import { useRouter } from "next/router";
 import { Account } from "@/services/endpoints/account";
 
+
 const apiPasswords = new Password();
 const apiAccount = new Account();
 
 export default function dashboard() {
+  
+
   const router = useRouter();
 
   const [data, setData] = useState<RIPassword[]>([]);
@@ -23,6 +26,7 @@ export default function dashboard() {
     try {
       const resp = await apiPasswords.getPasswords();
       setData(resp);
+      
     } catch (e: any) {
       toast.error(e.message);
     }
@@ -47,25 +51,28 @@ export default function dashboard() {
     }
   };
 
-  const handleChangePassword = (id: string) => {
+  const handleChangePassword = (idSenha: string) => {
 
-    if(id === undefined) {
+    
+    if(idSenha === undefined) {
       return;
     }
-
-    console.log(id);
     
-    router.push({
-      pathname: '/alterar-senha',
-      
-
+    return router.push({
+      pathname: `/alterar-senha/`,
+      query: {
+        id: idSenha,
+      }
     });
+
   };
 
+  
   useEffect(() => {
 
     getAllPasswords();
     getUser();
+    
   }, []);
 
   return (

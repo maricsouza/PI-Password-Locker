@@ -103,6 +103,7 @@ export default function SignUp() {
             <text>
               Ja possui conta?
               <Link href={"../login"} className={style.linkEntrar}>
+                {" "}
                 Entrar
               </Link>
             </text>

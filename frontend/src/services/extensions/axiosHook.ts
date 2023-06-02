@@ -9,7 +9,7 @@
 //     const requestIntercept = api.interceptors.request.use(
 //       async (config) => {
 //         const session = await getSession()
-//         console.log(session)
+
 //         if (!config.headers["token"]) {
 //           config.headers["token"] = `${session?.user?.token}`;
 //         }
